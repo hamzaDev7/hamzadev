@@ -3080,6 +3080,230 @@ body.modal-page {
   }
 }
 
+/* ---------- Review Banner ---------- */
+.review-banner-section {
+  padding-top: 0;
+}
+
+.review-banner {
+  background: var(--color-white);
+  border: 1.5px solid rgba(241, 79, 38, 0.22);
+  border-radius: 36px;
+  box-shadow: 0 30px 60px rgba(241, 79, 38, 0.08);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.rb-content {
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rb-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+  background: rgba(241, 79, 38, 0.08);
+  border: 1px solid rgba(241, 79, 38, 0.18);
+  color: var(--color-primary);
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.rb-content h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 800;
+  color: var(--color-black);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+
+.rb-content h2 .rb-accent {
+  display: block;
+  color: var(--color-primary);
+}
+
+.rb-desc {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  max-width: 460px;
+  margin-bottom: 28px;
+}
+
+.rb-cta {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.97rem;
+  padding: 16px 26px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 14px 30px rgba(241, 79, 38, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 30px;
+}
+
+.rb-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(241, 79, 38, 0.4);
+}
+
+.rb-cta .rb-cta-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+}
+
+.rb-cta .rb-cta-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.rb-cta .rb-cta-arrow svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s;
+}
+
+.rb-cta:hover .rb-cta-arrow svg {
+  transform: translateX(4px);
+}
+
+.rb-features {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--color-border);
+  margin-bottom: 20px;
+}
+
+.rb-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rb-feature-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(241, 79, 38, 0.1);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.rb-feature-text strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1.3;
+}
+
+.rb-feature-text small {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+}
+
+.rb-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--color-black);
+}
+
+.rb-trust i {
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+.rb-media {
+  position: relative;
+  min-height: 480px;
+  background: #FDF6F3;
+  overflow: hidden;
+}
+
+.rb-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.rb-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.85), transparent 22%);
+  pointer-events: none;
+}
+
+.rb-review-chip {
+  position: absolute;
+  left: 22px;
+  bottom: 36px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(241, 79, 38, 0.16);
+  border-radius: 18px;
+  padding: 12px 18px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.rb-review-chip p {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: var(--color-black);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.rb-review-chip p span {
+  color: var(--color-primary);
+}
+
+.rb-stars {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  color: #F7B733;
+  font-size: 1rem;
+  line-height: 1;
+}
+
 /* ---------- Footer ---------- */
 .footer {
   background: var(--color-black);
@@ -3378,6 +3602,14 @@ body.modal-page {
     grid-template-columns: 1fr 1fr;
   }
 
+  .rb-content {
+    padding: 40px 36px;
+  }
+
+  .rb-features {
+    gap: 16px;
+  }
+
   .project-grid,
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3554,6 +3786,28 @@ body.modal-page {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  .review-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .rb-media {
+    min-height: 360px;
+    order: -1;
+  }
+
+  .rb-media::after {
+    background: linear-gradient(180deg, transparent 70%, rgba(255, 255, 255, 0.85));
+  }
+
+  .rb-content {
+    padding: 32px 26px 38px;
+  }
+
+  .rb-features {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .network-grid {
     grid-template-columns: 1fr;
   }
@@ -3659,5 +3913,16 @@ body.modal-page {
 
   .mp-highlights {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .rb-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rb-review-chip {
+    left: 14px;
+    bottom: 20px;
+    padding: 10px 14px;
   }
 }
