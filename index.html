@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza Zahoor — Full-Stack Developer, AI Expert & Software Engineer</title>
+  <meta name="description"
+    content="Hamza Zahoor is a Full-Stack Software Engineer building premium, lightning-fast digital experiences with Next.js, TypeScript, Node.js, and AI integrations." />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Lenis Smooth Scrolling -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#F14F26',
+            'primary-dark': '#D8431E',
+            black: '#0E0E0E',
+            surface: '#F5F5F5',
+            border: '#ECECEC',
+            muted: '#6B6B6B'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+            accent: ['Instrument Serif', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- SECTION 0: Global Navigation -->
+  <nav class="glass-nav">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-icon"><img src="images/logo.png" alt="Hamza Zahoor logo" /></span>
+      <span>Hamza<span class="dot">.</span></span>
+    </a>
+
+    <!-- Desktop Links -->
+    <div class="nav-links">
+      <a href="#hero" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#faq">FAQs</a>
+    </div>
+
+    <a href="#contact" class="nav-cta">Contact Me</a>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#faq">FAQs</a>
+    <a href="#contact" class="nav-cta mt-4">Contact Me</a>
+  </div>
+
+  <!-- SECTION 1: Hero -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-subtitle gs-reveal">— Hello, I'm Hamza</div>
+        <h1 class="hero-title gs-reveal">I Build <span class="accent-text">Digital</span><br />Experiences</h1>
+        <p class="hero-desc gs-reveal">Full-Stack Software Engineer, AI Expert, and SEO Specialist. I craft
+          pixel-perfect, premium web applications that convert and scale.</p>
+
+        <div class="hero-buttons gs-reveal gs-stagger-parent">
+          <a href="#contact" class="cta-button gs-stagger-child">
+            <span class="cta-label">Let's Talk</span>
+            <span class="cta-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+          <a href="#portfolio" class="ghost-button gs-stagger-child">View Work</a>
+        </div>
+
+        <div class="hero-stats gs-reveal gs-stagger-parent">
+          <div class="hero-stat gs-stagger-child">
+            <div class="stat-number"><span class="counter" data-target="35">0</span>+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="hero-stat gs-stagger-child">
+            <div class="stat-number"><span class="counter" data-target="8">0</span>+</div>
+            <div class="stat-label">Industries Covered</div>
+          </div>
+          <div class="hero-stat gs-stagger-child">
+            <div class="stat-number"><span class="counter" data-target="5">0</span>+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper gs-reveal">
+        <div class="hero-arch">
+          <img src="images/hero-person.jpg" alt="Hamza Zahoor — Thumbs up" />
+        </div>
+
+        <!-- Floating Badges -->
+        <div class="float-badge top-left">
+          <div class="badge-icon orange"><i class="ph ph-rocket"></i></div>
+          <div class="badge-text">
+            <div class="badge-label">Total Projects</div>
+            <div class="badge-value">35+ Completed</div>
+          </div>
+        </div>
+
+        <div class="float-badge bottom-right">
+          <div class="badge-icon dark"><i class="ph ph-sparkle"></i></div>
+          <div class="badge-text">
+            <div class="badge-label">Certified</div>
+            <div class="badge-value">Full-Stack Dev</div>
+          </div>
+        </div>
+
+        <!-- Decor -->
+        <svg class="squiggle squiggle-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+          stroke-linecap="round">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+        <svg class="squiggle squiggle-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+          stroke-linecap="round">
+          <path d="M3 12h18M12 3v18" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Infinite Skills Marquee Strip -->
+  <div class="marquee-section gs-reveal">
+    <div class="marquee-wrapper">
+      <div class="marquee-content">
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-rocket"></i></div>
+          <div class="m-label">Next.js</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-file-ts"></i></div>
+          <div class="m-label">TypeScript</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-atom"></i></div>
+          <div class="m-label">React</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-circle"></i></div>
+          <div class="m-label">Node.js</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-waves"></i></div>
+          <div class="m-label">Tailwind CSS</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-database"></i></div>
+          <div class="m-label">PostgreSQL</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-cloud"></i></div>
+          <div class="m-label">Supabase</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-robot"></i></div>
+          <div class="m-label">AI / LLM</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-sparkle"></i></div>
+          <div class="m-label">GSAP</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-boat"></i></div>
+          <div class="m-label">Docker</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-code"></i></div>
+          <div class="m-label">Python</div>
+        </div>
+        <div class="marquee-item">
+          <div class="m-icon"><i class="ph ph-github-logo"></i></div>
+          <div class="m-label">GitHub</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: About Me -->
+  <section id="about" class="section sec-white">
+    <div class="container about-grid">
+      <div class="about-image-wrapper gs-reveal">
+        <div class="about-arch">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/about-person-mobile.jpg" />
+            <img src="images/about-person.jpg" alt="About Hamza Zahoor" />
+          </picture>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="eyebrow gs-reveal">About Me</span>
+        <h2 class="gs-reveal">Who is <span class="accent-text">Hamza?</span><span class="sparkle-accent">✤</span></h2>
+        <p class="gs-reveal">I am a passionate Full-Stack Software Engineer, AI Expert, and SEO Specialist. With
+          out-of-the-box thinking, I build premium, lightning-fast digital products that are perfectly optimized for
+          both users and search engines.</p>
+
+        <div class="about-stats gs-reveal gs-stagger-parent">
+          <div class="about-stat gs-stagger-child">
+            <div class="stat-num"><span class="counter" data-target="35">0</span>+</div>
+            <div class="stat-txt">Projects Completed</div>
+          </div>
+          <div class="about-stat gs-stagger-child">
+            <div class="stat-num"><span class="counter" data-target="8">0</span>+</div>
+            <div class="stat-txt">Industries Covered</div>
+          </div>
+          <div class="about-stat gs-stagger-child">
+            <div class="stat-num"><span class="counter" data-target="5">0</span>+</div>
+            <div class="stat-txt">Years of Exp.</div>
+          </div>
+        </div>
+
+        <div class="about-contact-pills gs-reveal gs-stagger-parent">
+          <div class="contact-pill gs-stagger-child">
+            <div class="pill-icon"><i class="ph ph-envelope-simple"></i></div>
+            <div class="pill-text">hamzazahooryts@gmail.com</div>
+          </div>
+          <div class="contact-pill gs-stagger-child">
+            <div class="pill-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="pill-text">Remote — Worldwide</div>
+          </div>
+        </div>
+
+        <div class="social-icons gs-reveal gs-stagger-parent">
+          <a href="https://github.com/hamzaDev7" target="_blank" rel="noreferrer" class="social-icon gs-stagger-child"
+            aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+          <a href="https://www.linkedin.com/in/hamza-zahoor-9055b9371/?isSelfProfile=true" target="_blank"
+            rel="noreferrer" class="social-icon gs-stagger-child" aria-label="LinkedIn"><i
+              class="ph ph-linkedin-logo"></i></a>
+          <a href="https://whatsapp.com/channel/0029VbDDY7l6rsQjZMjDQn2c" target="_blank" rel="noreferrer"
+            class="social-icon gs-stagger-child" aria-label="WhatsApp Channel"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="mailto:hamzazahooryts@gmail.com" class="social-icon gs-stagger-child" aria-label="Email"><i
+              class="ph ph-envelope-simple"></i></a>
+        </div>
+
+        <div class="gs-reveal" style="margin-top: 20px;">
+          <a href="resume/hamza-zahoor-resume.pdf" target="_blank" rel="noopener" class="cta-button dark">
+            <span class="cta-label">Download Resume</span>
+            <span class="cta-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3.5: Contact Ticker -->
+  <section class="contact-ticker-section">
+    <div class="marquee-wrapper">
+      <div class="marquee-content">
+        <div class="ticker-item">
+          <i class="ph ph-briefcase"></i>
+          <span class="ticker-tag">For Project</span>
+          <a href="mailto:hamzazahooryts@gmail.com">hamzazahooryts@gmail.com</a>
+        </div>
+        <div class="ticker-item">
+          <i class="ph ph-handshake"></i>
+          <span class="ticker-tag">Paid Collab / Promotion</span>
+          <a href="mailto:hamzazahooryts@gmail.com">hamzazahooryts@gmail.com</a>
+        </div>
+        <div class="ticker-item">
+          <i class="ph ph-question"></i>
+          <span class="ticker-tag">For Any Help</span>
+          <a href="mailto:hamzazahooryts@gmail.com">hamzazahooryts@gmail.com</a>
+        </div>
+        <div class="ticker-item">
+          <i class="ph ph-phone"></i>
+          <span class="ticker-tag">To Discuss</span>
+          <a href="tel:+923348910673">03348910673</a>
+        </div>
+        <div class="ticker-item">
+          <i class="ph ph-map-pin"></i>
+          <span class="ticker-tag">Location</span>
+          <span class="ticker-val">Remote — Serving Worldwide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Tools -->
+  <section id="tools" class="section sec-surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow centered gs-reveal">My Favorite Tools</span>
+        <h2 class="gs-reveal">Tools That <span class="accent-text">Power My Work</span><span
+            class="sparkle-accent">✤</span></h2>
+        <p class="gs-reveal">The AI assistants, editors, and platforms I use daily to ship production-grade software
+          faster.</p>
+      </div>
+
+      <div class="tools-grid gs-reveal gs-stagger-parent">
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#F4EDE8;"><img src="https://cdn.simpleicons.org/claude/D97757"
+              alt="Claude AI logo" /></div>
+          <div class="tool-pct">98<span>%</span></div>
+          <div class="tool-name">Claude AI</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#EFEFEF;"><img src="https://cdn.simpleicons.org/cursor/000000"
+              alt="Cursor logo" /></div>
+          <div class="tool-pct">95<span>%</span></div>
+          <div class="tool-name">Cursor</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#E9F2FD;"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+              alt="VS Code logo" /></div>
+          <div class="tool-pct">92<span>%</span></div>
+          <div class="tool-name">VS Code</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#F1F1F1;"><img src="https://cdn.simpleicons.org/github/181717"
+              alt="GitHub logo" /></div>
+          <div class="tool-pct">90<span>%</span></div>
+          <div class="tool-name">GitHub</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#FDF3E4;"><img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+              alt="Figma logo" /></div>
+          <div class="tool-pct">88<span>%</span></div>
+          <div class="tool-name">Figma</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#E8F3FD;"><img src="https://cdn.simpleicons.org/docker/2496ED"
+              alt="Docker logo" /></div>
+          <div class="tool-pct">85<span>%</span></div>
+          <div class="tool-name">Docker</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Timeline -->
+  <section id="resume" class="section sec-white">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow centered gs-reveal">My Journey</span>
+        <h2 class="gs-reveal">Education &amp; <span class="accent-text">Experience</span><span
+            class="sparkle-accent">✤</span></h2>
+        <p class="gs-reveal">A quick look at the roles and academics that shaped my engineering fundamentals.</p>
+      </div>
+
+      <div class="gs-reveal">
+        <div class="timeline gs-stagger-parent">
+          <div class="timeline-item gs-stagger-child">
+            <div class="timeline-card">
+              <div class="tl-year">2023 – Present</div>
+              <div class="tl-title">Senior Full-Stack Engineer</div>
+              <div class="tl-org">Nexus Labs — San Francisco / Remote</div>
+              <div class="tl-desc">Leading frontend and API modernization for high-traffic client portals using Next.js,
+                TypeScript, PostgreSQL, and AI agent integrations.</div>
+            </div>
+          </div>
+          <div class="timeline-item gs-stagger-child">
+            <div class="timeline-card">
+              <div class="tl-year">2021 – 2023</div>
+              <div class="tl-title">Software Engineer</div>
+              <div class="tl-org">DevPulse Technologies — Full-Stack Consultant</div>
+              <div class="tl-desc">Built modular React interfaces, centralized design systems, and RESTful Node.js
+                services with comprehensive integration test suites.</div>
+            </div>
+          </div>
+          <div class="timeline-item gs-stagger-child">
+            <div class="timeline-card">
+              <div class="tl-year">09/2025 – Present</div>
+              <div class="tl-title">B.S. Computer Science (Artificial Intelligence)</div>
+              <div class="tl-org">University of Gujrat, Gujrat</div>
+              <div class="tl-desc">Current CGPA: 3.36/4.00. Relevant Coursework: Programming Fundamentals, OOP.</div>
+            </div>
+          </div>
+          <div class="timeline-item gs-stagger-child">
+            <div class="timeline-card">
+              <div class="tl-year">2023 – 2025</div>
+              <div class="tl-title">Intermediate (F.Sc. — Pre-Medical)</div>
+              <div class="tl-org">Faran Boys Higher Secondary School, Pir Mahal — BISE Faisalabad</div>
+              <div class="tl-desc">82% Marks — Honhaar Scholarship Recipient.</div>
+            </div>
+          </div>
+          <div class="timeline-item gs-stagger-child">
+            <div class="timeline-card">
+              <div class="tl-year">2021 – 2023</div>
+              <div class="tl-title">Matriculation (Science)</div>
+              <div class="tl-org">Government High School No. 1, Pir Mahal — BISE Faisalabad</div>
+              <div class="tl-desc">92% Marks.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5.5: Award Journey -->
+  <section id="awards" class="section sec-awards">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow centered gs-reveal">Certifications &amp; Wins</span>
+        <h2 class="gs-reveal">My Winning <span class="accent-text">Award Journey</span><span
+            class="sparkle-accent">✤</span></h2>
+        <p class="gs-reveal">11 verified certificates — courses, internships, and bootcamps. Click "View Certificate" to
+          open the actual PDF.</p>
+      </div>
+    </div>
+
+    <div class="marquee-wrapper awards-marquee gs-reveal">
+      <div class="marquee-content">
+        <div class="award-card">
+          <div class="aw-num">01</div>
+          <div class="aw-icon"><i class="ph ph-code"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jun 18, 2026 — Johns Hopkins University</div>
+          <div class="aw-title">HTML, CSS &amp; JavaScript for Web Developers</div>
+          <p class="aw-desc">Coursera course covering responsive layouts, DOM APIs, and JavaScript fundamentals from
+            Johns Hopkins University.</p>
+          <a href="certificates/cert-01-html-css-javascript.pdf" target="_blank" rel="noreferrer" class="aw-btn">View
+            Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">02</div>
+          <div class="aw-icon"><i class="ph ph-palette"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jun 19, 2026 — Johns Hopkins University</div>
+          <div class="aw-title">Introduction to CSS3</div>
+          <p class="aw-desc">Modern styling fundamentals — selectors, box model, flexbox, and responsive design
+            patterns.</p>
+          <a href="certificates/cert-02-introduction-css3.pdf" target="_blank" rel="noreferrer" class="aw-btn">View
+            Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">03</div>
+          <div class="aw-icon"><i class="ph ph-robot"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jun 20, 2026 — Microsoft</div>
+          <div class="aw-title">Generative AI for Data Analysis</div>
+          <p class="aw-desc">Applied generative AI techniques for wrangling, analyzing, and interpreting data.</p>
+          <a href="certificates/cert-03-generative-ai-data-analysis.pdf" target="_blank" rel="noreferrer"
+            class="aw-btn">View Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">04</div>
+          <div class="aw-icon"><i class="ph ph-medal"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jun 22, 2026 — Simplilearn</div>
+          <div class="aw-title">Programming with C++</div>
+          <p class="aw-desc">Object-oriented programming, memory management, and problem-solving with modern C++.</p>
+          <a href="certificates/cert-04-programming-cpp.pdf" target="_blank" rel="noreferrer" class="aw-btn">View
+            Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">05</div>
+          <div class="aw-icon"><i class="ph ph-chart-line-up"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jun 24, 2026 — Microsoft</div>
+          <div class="aw-title">Work Smarter with Microsoft Excel</div>
+          <p class="aw-desc">Productivity workflows, formulas, and data handling to work faster with spreadsheets.</p>
+          <a href="certificates/cert-05-microsoft-excel.pdf" target="_blank" rel="noreferrer" class="aw-btn">View
+            Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">06</div>
+          <div class="aw-icon"><i class="ph ph-trophy"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jun 25, 2026 — Oracle</div>
+          <div class="aw-title">Oracle Java Foundations</div>
+          <p class="aw-desc">Core Java concepts — syntax, OOP, data types, and the Java platform ecosystem.</p>
+          <a href="certificates/cert-06-oracle-java-foundations.pdf" target="_blank" rel="noreferrer"
+            class="aw-btn">View Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">07</div>
+          <div class="aw-icon"><i class="ph ph-cloud"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jun 26, 2026 — Microsoft</div>
+          <div class="aw-title">Artificial Intelligence on Microsoft Azure</div>
+          <p class="aw-desc">Deploying AI and ML workloads on Azure — cognitive services, ML Studio, and responsible AI.
+          </p>
+          <a href="certificates/cert-07-ai-microsoft-azure.pdf" target="_blank" rel="noreferrer" class="aw-btn">View
+            Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">08</div>
+          <div class="aw-icon"><i class="ph ph-users-three"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jun 26, 2026 — Google Cloud</div>
+          <div class="aw-title">Google Workspace with Gemini</div>
+          <p class="aw-desc">Smarter collaboration using Gemini AI across Gmail, Docs, Sheets, and Drive.</p>
+          <a href="certificates/cert-08-google-workspace-gemini.pdf" target="_blank" rel="noreferrer"
+            class="aw-btn">View Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">09</div>
+          <div class="aw-icon"><i class="ph ph-briefcase"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jul 02, 2026 — DecodeLabs</div>
+          <div class="aw-title">Frontend Virtual Internship</div>
+          <p class="aw-desc">One-month hands-on frontend internship on real-world projects — Student ID FD086438.</p>
+          <a href="certificates/cert-09-decodelabs-internship.pdf" target="_blank" rel="noreferrer" class="aw-btn">View
+            Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">10</div>
+          <div class="aw-icon"><i class="ph ph-badge-check"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jul 06, 2026 — KnowledgeGate</div>
+          <div class="aw-title">Complete Java — Score 98%</div>
+          <p class="aw-desc">Certified completion of the Complete Java course with a score of 98%.</p>
+          <a href="certificates/cert-10-complete-java.pdf" target="_blank" rel="noreferrer" class="aw-btn">View
+            Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+
+        <div class="award-card">
+          <div class="aw-num">11</div>
+          <div class="aw-icon"><i class="ph ph-rocket-launch"></i></div>
+          <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+          <div class="aw-issuer">Jul 12, 2026 — IMAC</div>
+          <div class="aw-title">AI Bootcamp '26 — Appreciation</div>
+          <p class="aw-desc">Certificate of Appreciation as CC &amp; Advisor for the 3-day AI Bootcamp '26 (Jul 10–12).
+          </p>
+          <a href="certificates/cert-11-ai-bootcamp-26.pdf" target="_blank" rel="noreferrer" class="aw-btn">View
+            Certificate <i class="ph ph-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Services -->
+  <section id="services" class="section sec-surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow centered gs-reveal">What I Offer</span>
+        <h2 class="gs-reveal">My <span class="accent-text">Services</span><span class="sparkle-accent"><i
+              class="ph ph-sparkle"></i></span></h2>
+        <p class="gs-reveal">End-to-end engineering services designed to take your product from idea to production.</p>
+      </div>
+
+      <div class="services-grid gs-reveal gs-stagger-parent">
+        <div class="service-card gs-stagger-child">
+          <div class="svc-icon"><i class="ph ph-code"></i></div>
+          <h3>Full Stack Dev</h3>
+          <p>End-to-end web applications from pixel-perfect frontends to scalable backends using Next.js, Node.js, and
+            modern databases.</p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22Full%20Stack%20Dev%22%20service.%20I%20need%20an%20end-to-end%20web%20application%20(frontend%20%2B%20backend).%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
+            target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
+        </div>
+        <div class="service-card gs-stagger-child">
+          <div class="svc-icon dark"><i class="ph ph-cloud"></i></div>
+          <h3>SaaS Development</h3>
+          <p>Build &amp; launch powerful SaaS platforms with subscription billing, user dashboards, and seamless API
+            integrations.</p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22SaaS%20Development%22%20service.%20I%20want%20to%20build%20and%20launch%20a%20SaaS%20platform%20with%20billing%20and%20dashboards.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
+            target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
+        </div>
+        <div class="service-card gs-stagger-child">
+          <div class="svc-icon"><i class="ph ph-robot"></i></div>
+          <h3>AI Agents &amp; Automation</h3>
+          <p>Deploy smart AI agents, integrate LLMs, and automate repetitive business workflows to supercharge
+            productivity.</p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22AI%20Agents%20%26%20Automation%22%20service.%20I%20want%20AI%20agents%20and%20LLM%20integrations%20to%20automate%20my%20business%20workflows.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
+            target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
+        </div>
+        <div class="service-card gs-stagger-child">
+          <div class="svc-icon dark"><i class="ph ph-chart-line-up"></i></div>
+          <h3>SEO &amp; Performance</h3>
+          <p>Data-driven SEO strategies, technical audits, and Core Web Vitals optimization to drive organic growth.</p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22SEO%20%26%20Performance%22%20service.%20I%20need%20a%20technical%20SEO%20audit%20and%20Core%20Web%20Vitals%20optimization.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
+            target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
+        </div>
+        <div class="service-card gs-stagger-child">
+          <div class="svc-icon"><i class="ph ph-palette"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>User-centered interfaces, wireframes, and design systems in Figma that balance beauty with conversion.</p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22UI%2FUX%20Design%22%20service.%20I%20need%20user-centered%20interfaces%2C%20wireframes%2C%20and%20a%20design%20system%20in%20Figma.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
+            target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
+        </div>
+        <div class="service-card gs-stagger-child">
+          <div class="svc-icon dark"><i class="ph ph-plugs-connected"></i></div>
+          <h3>API &amp; Integrations</h3>
+          <p>RESTful &amp; GraphQL APIs, third-party integrations, and payment gateways wired securely into your
+            product.</p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22API%20%26%20Integrations%22%20service.%20I%20need%20REST%2FGraphQL%20APIs%20and%20third-party%20or%20payment%20gateway%20integrations.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
+            target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
+        </div>
+        <div class="service-card gs-stagger-child">
+          <div class="svc-icon"><i class="ph ph-mobile"></i></div>
+          <h3>Mobile-First Builds</h3>
+          <p>Responsive, app-like progressive web experiences that feel native on every screen size and device.</p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22Mobile-First%20Builds%22%20service.%20I%20need%20a%20responsive%2C%20app-like%20progressive%20web%20experience.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
+            target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
+        </div>
+        <div class="service-card gs-stagger-child">
+          <div class="svc-icon dark"><i class="ph ph-headset"></i></div>
+          <h3>Support &amp; Maintenance</h3>
+          <p>Ongoing updates, monitoring, and rapid bug fixes to keep your product fast, secure, and always online.</p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22Support%20%26%20Maintenance%22%20service.%20I%20need%20ongoing%20updates%2C%20monitoring%2C%20and%20bug%20fixes%20for%20my%20product.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
+            target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6.5: Pricing -->
+  <section id="pricing" class="section sec-white">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="section-head">
+          <span class="eyebrow gs-reveal">Pricing Table</span>
+          <h2 class="gs-reveal">My <span class="accent-text">Pricing Model</span><span class="sparkle-accent">✤</span>
+          </h2>
+          <p class="gs-reveal">Transparent, fixed-scope packages — no hidden fees, no surprise invoices.</p>
+        </div>
+        <a href="#contact" class="cta-button gs-reveal">
+          <span class="cta-label">Get Started</span>
+          <span class="cta-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="pricing-grid gs-reveal gs-stagger-parent">
+        <div class="price-card gs-stagger-child">
+          <div class="price-head">
+            <div class="price-badge"><i class="ph ph-star"></i></div>
+            <div class="price-label">Custom Website</div>
+            <div class="price-amount">$100<span>/Project</span></div>
+          </div>
+          <ul class="price-features">
+            <li><i class="ph-bold ph-check-circle"></i> Custom Web Design</li>
+            <li><i class="ph-bold ph-check-circle"></i> Responsive Layout</li>
+            <li><i class="ph-bold ph-check-circle"></i> Basic SEO Setup</li>
+            <li><i class="ph-bold ph-check-circle"></i> Frontend Development</li>
+            <li><i class="ph-bold ph-check-circle"></i> 5 Revision Round</li>
+            <li><i class="ph-bold ph-check-circle"></i> Payment Integration</li>
+            <li><i class="ph-bold ph-check-circle"></i> 5 Pages Included</li>
+            <li><i class="ph-bold ph-check-circle"></i> Delivery in 7 Days</li>
+          </ul>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%20want%20to%20get%20the%20%22Custom%20Website%22%20package%20(%24100%2FProject).%0A%0AIncludes:%0A-%20Custom%20Web%20Design%0A-%20Responsive%20Layout%0A-%20Basic%20SEO%20Setup%0A-%20Frontend%20Development%0A-%205%20Revision%20Rounds%0A-%20Payment%20Integration%0A-%205%20Pages%20Included%0A-%20Delivery%20in%207%20Days%0A%0APlease%20share%20the%20requirements%20and%20next%20steps."
+            target="_blank" rel="noreferrer" class="price-btn"><i class="ph ph-whatsapp-logo"></i> Get This</a>
+        </div>
+
+        <div class="price-card featured gs-stagger-child">
+          <div class="price-head">
+            <div class="price-badge"><i class="ph-fill ph-star"></i></div>
+            <div class="price-label">SaaS Development</div>
+            <div class="price-amount">$1000<span>/Project</span></div>
+          </div>
+          <ul class="price-features">
+            <li><i class="ph-bold ph-check-circle"></i> Full-Stack SaaS Build</li>
+            <li><i class="ph-bold ph-check-circle"></i> Subscription Billing (Stripe)</li>
+            <li><i class="ph-bold ph-check-circle"></i> User Auth &amp; Dashboard</li>
+            <li><i class="ph-bold ph-check-circle"></i> REST / GraphQL API</li>
+            <li><i class="ph-bold ph-check-circle"></i> Admin Panel</li>
+            <li><i class="ph-bold ph-check-circle"></i> Advanced SEO</li>
+            <li><i class="ph-bold ph-check-circle"></i> Unlimited Revisions</li>
+            <li><i class="ph-bold ph-check-circle"></i> Priority Support</li>
+          </ul>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%20want%20to%20get%20the%20%22SaaS%20Development%22%20package%20(%241000%2FProject).%0A%0AIncludes:%0A-%20Full-Stack%20SaaS%20Build%0A-%20Subscription%20Billing%20(Stripe)%0A-%20User%20Auth%20%26%20Dashboard%0A-%20REST%20%2F%20GraphQL%20API%0A-%20Admin%20Panel%0A-%20Advanced%20SEO%0A-%20Unlimited%20Revisions%0A-%20Priority%20Support%0A%0APlease%20share%20the%20requirements%20and%20next%20steps."
+            target="_blank" rel="noreferrer" class="price-btn"><i class="ph ph-whatsapp-logo"></i> Get This</a>
+        </div>
+
+        <div class="price-card gs-stagger-child">
+          <div class="price-head alt">
+            <div class="price-badge"><i class="ph ph-crown"></i></div>
+            <div class="price-label">Enterprise</div>
+            <div class="price-amount script">Custom pricing</div>
+          </div>
+          <ul class="price-features">
+            <li><i class="ph-bold ph-check-circle"></i> Full Enterprise Architecture</li>
+            <li><i class="ph-bold ph-check-circle"></i> AI Agents &amp; Automation</li>
+            <li><i class="ph-bold ph-check-circle"></i> Blockchain &amp; Web3</li>
+            <li><i class="ph-bold ph-check-circle"></i> Cloud &amp; DevOps</li>
+            <li><i class="ph-bold ph-check-circle"></i> Dedicated Project Manager</li>
+            <li><i class="ph-bold ph-check-circle"></i> Unlimited Revisions</li>
+            <li><i class="ph-bold ph-check-circle"></i> 24/7 Priority Support</li>
+            <li><i class="ph-bold ph-check-circle"></i> Proactive Maintenance</li>
+          </ul>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%20am%20interested%20in%20the%20%22Enterprise%22%20package%20(Custom%20pricing).%0A%0AIncludes:%0A-%20Full%20Enterprise%20Architecture%0A-%20AI%20Agents%20%26%20Automation%0A-%20Blockchain%20%26%20Web3%0A-%20Cloud%20%26%20DevOps%0A-%20Dedicated%20Project%20Manager%0A-%20Unlimited%20Revisions%0A-%2024%2F7%20Priority%20Support%0A-%20Proactive%20Maintenance%0A%0APlease%20share%20the%20requirements%20and%20next%20steps."
+            target="_blank" rel="noreferrer" class="price-btn"><i class="ph ph-whatsapp-logo"></i> Get This</a>
+        </div>
+      </div>
+
+      <!-- Promo Banner -->
+      <div class="promo-banner gs-reveal">
+        <div class="pb-left">
+          <span class="pb-badge"><i class="ph ph-briefcase"></i> Let's Build Together</span>
+          <h2>Have a <span class="pb-dark">Project?</span></h2>
+          <p>Turn your idea into a premium, production-ready digital product. From concept to launch — I handle it all.
+          </p>
+          <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%20have%20a%20project%20requirement%20and%20would%20like%20to%20discuss%20it%20with%20you.%0A%0APlease%20share%20the%20next%20steps%20and%20requirements."
+            target="_blank" rel="noreferrer" class="pb-btn"><i class="ph ph-whatsapp-logo"></i> Yes, Let's Talk! <i
+              class="ph ph-arrow-right"></i></a>
+        </div>
+        <div class="pb-media">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?fit=crop&w=900&q=80"
+            alt="Team collaborating on a project" loading="lazy" />
+        </div>
+        <div class="pb-right">
+          <span class="pb-badge"><i class="ph ph-users-three"></i> Our Expertise</span>
+          <h2>Professional <span class="pb-dark">Dev</span> Team</h2>
+          <p>A dedicated squad of designers, developers, and AI specialists ready to bring your vision to life — on
+            time, on budget.</p>
+          <ul class="pb-list">
+            <li><i class="ph ph-code"></i> Full-Stack Development</li>
+            <li><i class="ph ph-robot"></i> AI &amp; Automation</li>
+            <li><i class="ph ph-palette"></i> Premium UI/UX Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Portfolio / Projects -->
+  <section id="portfolio" class="section sec-white">
+    <div class="container">
+      <div class="portfolio-header">
+        <div>
+          <span class="eyebrow gs-reveal">My Portfolio</span>
+          <h2 class="gs-reveal">Let's Have a Look at<br /><span class="accent-text">My Portfolio</span><span
+              class="sparkle-accent">✤</span></h2>
+        </div>
+        <a href="projects.html" class="cta-button gs-reveal">
+          <span class="cta-label">View All Projects</span>
+          <span class="cta-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="project-grid gs-reveal gs-stagger-parent">
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/01-hostelhub.jpg" alt="HostelHub — Hostel Management System" loading="lazy" />
+            <div class="pc-overlay"><a href="https://hostel-hub-three-rho.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">HostelHub — Hostel Management System</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Management System</span>
+              <span class="pc-tag">Admin Panel</span>
+              <span class="pc-tag">Web App</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/01-hostelhub.html" class="pc-details">View Details</a>
+              <a href="https://hostel-hub-three-rho.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/04-nexusai.jpg" alt="Nexus AI — Unified Notes & Corporate Workspace"
+              loading="lazy" />
+            <div class="pc-overlay"><a href="https://nexusai-theta-liard.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Nexus AI — Unified Workspace</div>
+            <div class="pc-tags">
+              <span class="pc-tag">SaaS</span>
+              <span class="pc-tag">AI Notes</span>
+              <span class="pc-tag">CRM</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/04-nexusai.html" class="pc-details">View Details</a>
+              <a href="https://nexusai-theta-liard.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/06-kinetik.jpg" alt="Kinetik AI — Turn long videos into short clips"
+              loading="lazy" />
+            <div class="pc-overlay"><a href="https://film-slice-smart.lovable.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Kinetik AI — Video to Clips</div>
+            <div class="pc-tags">
+              <span class="pc-tag">AI Video</span>
+              <span class="pc-tag">Scene Detection</span>
+              <span class="pc-tag">Video Editor</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/06-kinetik.html" class="pc-details">View Details</a>
+              <a href="https://film-slice-smart.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/08-pdfpro.jpg" alt="PDFPro Tools — 30 Free Online PDF Tools" loading="lazy" />
+            <div class="pc-overlay"><a href="https://pdfpro-gules.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">PDFPro Tools — 30 Free PDF Tools</div>
+            <div class="pc-tags">
+              <span class="pc-tag">PDF Tools</span>
+              <span class="pc-tag">Client-Side</span>
+              <span class="pc-tag">Utilities</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/08-pdfpro.html" class="pc-details">View Details</a>
+              <a href="https://pdfpro-gules.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
+                  class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/11-aegiscrm.jpg" alt="Aegis CRM — Sales that scale with intent" loading="lazy" />
+            <div class="pc-overlay"><a href="https://intent-flow-67.lovable.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Aegis CRM — Sales that Scale</div>
+            <div class="pc-tags">
+              <span class="pc-tag">AI CRM</span>
+              <span class="pc-tag">Sales Pipeline</span>
+              <span class="pc-tag">SaaS</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/11-aegiscrm.html" class="pc-details">View Details</a>
+              <a href="https://intent-flow-67.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
+                <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/13-hamatech.jpg" alt="HamzaTech Business — AI-native ERP" loading="lazy" />
+            <div class="pc-overlay"><a href="https://bizflow-aura.lovable.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">HamzaTech Business — AI ERP</div>
+            <div class="pc-tags">
+              <span class="pc-tag">ERP</span>
+              <span class="pc-tag">CRM &amp; HR</span>
+              <span class="pc-tag">Analytics</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/13-hamatech.html" class="pc-details">View Details</a>
+              <a href="https://bizflow-aura.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
+                  class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Testimonials -->
+  <section id="testimonials" class="section sec-surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow centered gs-reveal">Client Endorsements</span>
+        <h2 class="gs-reveal">Trusted by <span class="accent-text">Founders</span> &amp; Product Teams<span
+            class="sparkle-accent">✤</span></h2>
+        <p class="gs-reveal">What people say after working together on real products.</p>
+      </div>
+
+      <div class="testimonials-grid gs-reveal gs-stagger-parent">
+        <div class="testimonial-card gs-stagger-child">
+          <div class="testimonial-top">
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AL</div>
+              <div>
+                <div class="testimonial-name">Alexander Lewis</div>
+                <div class="testimonial-role">Founder, CloudScale Inc.</div>
+              </div>
+            </div>
+            <div class="testimonial-quote-icon"><i class="ph-fill ph-quotes"></i></div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            <span class="rating-num">5.0</span>
+          </div>
+          <p class="testimonial-text">"Hamza delivered our SaaS MVP two weeks ahead of schedule. His engineering
+            standards and deep understanding of Next.js saved us thousands of dollars in technical debt."</p>
+        </div>
+
+        <div class="testimonial-card gs-stagger-child">
+          <div class="testimonial-top">
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SM</div>
+              <div>
+                <div class="testimonial-name">Sarah Mitchell</div>
+                <div class="testimonial-role">VP of Product, FinVerse</div>
+              </div>
+            </div>
+            <div class="testimonial-quote-icon"><i class="ph-fill ph-quotes"></i></div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            <span class="rating-num">5.0</span>
+          </div>
+          <p class="testimonial-text">"Rarely do you find an engineer who writes clean backend logic while having an
+            immaculate eye for micro-interactions. Hamza is the complete package."</p>
+        </div>
+
+        <div class="testimonial-card gs-stagger-child">
+          <div class="testimonial-top">
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">DR</div>
+              <div>
+                <div class="testimonial-name">David Ross</div>
+                <div class="testimonial-role">Tech Lead, Orbital AI</div>
+              </div>
+            </div>
+            <div class="testimonial-quote-icon"><i class="ph-fill ph-quotes"></i></div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+              class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            <span class="rating-num">5.0</span>
+          </div>
+          <p class="testimonial-text">"Communication was flawless throughout our contract. Hamza transformed our slow
+            website into a lightning-fast experience with 99+ Lighthouse scores."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8.5: Join My Network -->
+  <section id="network" class="section sec-white">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow centered gs-reveal">Stay Connected</span>
+        <h2 class="gs-reveal">Join My <span class="accent-text">Network</span><span class="sparkle-accent">✤</span></h2>
+        <p class="gs-reveal">Get daily tech insights on WhatsApp and level up with my hands-on Web Development course.
+        </p>
+      </div>
+
+      <div class="network-grid gs-reveal gs-stagger-parent">
+        <!-- WhatsApp Channel -->
+        <div class="net-card dark gs-stagger-child">
+          <div class="net-head">
+            <img class="net-avatar" src="images/logo.png" alt="AI WITH HAMZA" />
+            <div>
+              <div class="net-title">AI WITH HAMZA <i class="ph-fill ph-verified-badge"></i></div>
+              <div class="net-sub">WhatsApp Channel</div>
+            </div>
+          </div>
+          <div class="net-meta">
+            <span><i class="ph ph-broadcast"></i> Daily Tech Drops</span>
+            <span><i class="ph ph-users-three"></i> Full Stack | AI</span>
+            <span><i class="ph ph-link"></i> 100% Free</span>
+          </div>
+          <ul class="net-bullets">
+            <li><i class="ph-fill ph-check-circle"></i> Build SaaS Apps That Make Money</li>
+            <li><i class="ph-fill ph-check-circle"></i> Full Stack | AI | Automation</li>
+            <li><i class="ph-fill ph-check-circle"></i> Roadmaps, Snippets &amp; Career Tips</li>
+            <li><i class="ph-fill ph-check-circle"></i> Reviews • Collabs • Promotions</li>
+          </ul>
+          <a class="net-url" href="https://whatsapp.com/channel/0029VbDDY7l6rsQjZMjDQn2c" target="_blank"
+            rel="noreferrer">whatsapp.com/channel/0029VbDDY7l6rsQjZMjDQn2c</a>
+          <a href="https://whatsapp.com/channel/0029VbDDY7l6rsQjZMjDQn2c" target="_blank" rel="noreferrer"
+            class="net-btn wa"><i class="ph ph-whatsapp-logo"></i> View on WhatsApp</a>
+        </div>
+
+        <!-- Web Development Course -->
+        <div class="net-card gs-stagger-child">
+          <div class="course-top">
+            <div class="course-icon"><i class="ph ph-code"></i></div>
+            <span class="course-badge">New Course</span>
+          </div>
+          <div class="course-title">Web Development</div>
+          <p class="course-desc">Master modern full-stack web development from scratch. Build real projects, learn the
+            concepts that actually get you hired, and ship a portfolio that lands interviews.</p>
+          <div class="course-meta"><i class="ph ph-clock"></i> Duration: 1 Month</div>
+          <button type="button" class="net-btn course" id="open-course-modal"><i class="ph ph-graduation-cap"></i>
+            Course Details &amp; Enroll</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Details Modal -->
+  <div class="course-overlay" id="course-modal" aria-hidden="true">
+    <div class="course-modal" role="dialog" aria-modal="true" aria-labelledby="course-modal-title">
+      <button type="button" class="modal-close" id="close-course-modal" aria-label="Close course details"><i
+          class="ph ph-x"></i></button>
+
+      <span class="mp-badge">Web Development</span>
+      <h3 id="course-modal-title">Full-Stack Web Development Course</h3>
+      <p class="cm-intro">A 1-month, project-driven program that takes you from fundamentals to a job-ready portfolio.
+        Here's exactly what we teach — no fluff, only what works in the real world.</p>
+
+      <div class="cm-heading"><i class="ph ph-graduation-cap"></i> What We Teach — Key Points</div>
+      <ul class="kp-list">
+        <li><i class="ph-bold ph-check-circle"></i> HTML5, CSS3 &amp; responsive layouts</li>
+        <li><i class="ph-bold ph-check-circle"></i> Modern JavaScript (ES6+), DOM &amp; async</li>
+        <li><i class="ph-bold ph-check-circle"></i> React — components, hooks, routing</li>
+        <li><i class="ph-bold ph-check-circle"></i> Node.js, Express &amp; REST APIs</li>
+        <li><i class="ph-bold ph-check-circle"></i> Databases — MongoDB &amp; SQL basics</li>
+        <li><i class="ph-bold ph-check-circle"></i> Git, GitHub &amp; deployment workflows</li>
+        <li><i class="ph-bold ph-check-circle"></i> AI tools &amp; debugging like a pro</li>
+        <li><i class="ph-bold ph-check-circle"></i> 3 real portfolio projects from scratch</li>
+      </ul>
+
+      <div class="cm-facts">
+        <div class="cm-fact">
+          <div class="cf-val">1 Month</div>
+          <div class="cf-label">Duration</div>
+        </div>
+        <div class="cm-fact">
+          <div class="cf-val">3 Projects</div>
+          <div class="cf-label">Portfolio Builds</div>
+        </div>
+        <div class="cm-fact">
+          <div class="cf-val">Beginner → Pro</div>
+          <div class="cf-label">Level</div>
+        </div>
+      </div>
+
+      <div class="cm-actions">
+        <a href="https://wa.me/923348910673?text=Hi%20Hamza%2C%20I%20want%20to%20enroll%20in%20the%20Web%20Development%20course."
+          target="_blank" rel="noreferrer" class="net-btn course"><i class="ph ph-ticket"></i> Proceed to Enrollment</a>
+        <a href="#contact" class="ghost-button" id="course-ask-btn"><i class="ph ph-chat-circle"></i> Ask a Question</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9: FAQs -->
+  <section id="faq" class="section sec-white">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow centered gs-reveal">Common Questions</span>
+        <h2 class="gs-reveal">Frequently Asked <span class="accent-text">Questions</span><span
+            class="sparkle-accent">✤</span></h2>
+        <p class="gs-reveal">Everything you need to know before we start working together.</p>
+      </div>
+
+      <div class="faq-grid gs-reveal">
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>What is your typical project timeline?</span>
+              <span class="faq-toggle"><i class="ph ph-caret-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Landing pages and frontend overhauls take 1–2 weeks. Full-stack SaaS MVPs (auth, database, payments,
+                deployment) typically take 3–5 weeks from kick-off to launch.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do we communicate throughout the build?</span>
+              <span class="faq-toggle"><i class="ph ph-caret-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Weekly sprint demos, a shared private GitHub repo, and direct Slack or WhatsApp channels for quick
+                daily syncs — full transparency at every step.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Who owns the code and intellectual property?</span>
+              <span class="faq-toggle"><i class="ph ph-caret-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>You maintain 100% ownership of all source code, assets, repository rights, and documentation from day
+                one — handed over with clean setup guides.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Are you available for full-time or contract roles?</span>
+              <span class="faq-toggle"><i class="ph ph-caret-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes — I'm open to select high-impact contract roles, remote full-stack positions, and dedicated product
+                advisory partnerships.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-sidebar">
+          <div class="faq-promo">
+            <div class="promo-icon"><i class="ph ph-chat-circle-dots"></i></div>
+            <h4>Have a project in mind?</h4>
+            <p>Let's turn your idea into a production-ready product. Reply guaranteed within 24 hours.</p>
+            <a href="#contact" class="promo-btn">Let's Talk</a>
+          </div>
+
+          <div class="faq-contact-card">
+            <div class="cc-icon"><i class="ph ph-envelope-simple"></i></div>
+            <div>
+              <div class="cc-label">Prefer email?</div>
+              <div class="cc-title">hamzazahooryts@gmail.com</div>
+              <div class="cc-sub">Click the copy button in the contact section</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Contact -->
+  <section id="contact" class="section sec-surface">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow centered gs-reveal">Get In Touch</span>
+        <h2 class="gs-reveal">Let's Build <span class="accent-text">Something Great</span><span
+            class="sparkle-accent">✤</span></h2>
+        <p class="gs-reveal">Have a specific project in mind, need a consultant, or want to chat? I reply within 24
+          hours.</p>
+      </div>
+
+      <div class="contact-grid gs-reveal">
+        <div class="contact-info-panel">
+          <h3>Contact Information</h3>
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="ph ph-envelope-simple"></i></div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value">hamzazahooryts@gmail.com</div>
+            </div>
+            <button class="ci-copy" onclick="copyEmail()" aria-label="Copy email"><i class="ph ph-copy"></i></button>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="ph ph-phone"></i></div>
+            <div>
+              <div class="ci-label">Phone / WhatsApp</div>
+              <div class="ci-value"><a href="tel:+923348910673" style="color: inherit;">03348910673</a></div>
+            </div>
+            <button class="ci-copy" onclick="copyPhone()" aria-label="Copy phone number"><i
+                class="ph ph-copy"></i></button>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="ph ph-map-pin"></i></div>
+            <div>
+              <div class="ci-label">Location</div>
+              <div class="ci-value">Remote — Serving Worldwide</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="ph ph-clock"></i></div>
+            <div>
+              <div class="ci-label">Response Time</div>
+              <div class="ci-value">Within 24 hours</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-icon"><i class="ph ph-calendar-check"></i></div>
+            <div>
+              <div class="ci-label">Availability</div>
+              <div class="ci-value">Open for new projects</div>
+            </div>
+          </div>
+
+          <div class="social-icons" style="margin-top: 28px;">
+            <a href="https://github.com/hamzaDev7" target="_blank" rel="noreferrer" class="social-icon"
+              aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+            <a href="https://www.linkedin.com/in/hamza-zahoor-9055b9371/?isSelfProfile=true" target="_blank"
+              rel="noreferrer" class="social-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form-panel">
+          <h3>Send a Message</h3>
+          <form id="contact-form" action="https://formsubmit.co/ajax/hamzazahooryts@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-name">Your Name</label>
+                <input id="cf-name" name="name" type="text" required placeholder="e.g. Sarah Jenkins" />
+              </div>
+              <div class="form-group">
+                <label for="cf-email">Email Address</label>
+                <input id="cf-email" name="email" type="email" required placeholder="sarah@company.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-type">Project Type</label>
+              <select id="cf-type" name="project_type">
+                <option>Full-Stack Web Application (MVP / Production)</option>
+                <option>SaaS Platform &amp; AI Tooling</option>
+                <option>Frontend Architecture &amp; Design Systems</option>
+                <option>Performance &amp; SEO Audit</option>
+                <option>Other Collaboration / Full-time Opportunity</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="4" required
+                placeholder="Briefly describe your goals, timeline, and current state..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <i class="ph ph-paper-plane-tilt"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10.5: Meeting Agenda (above footer) -->
+  <section id="meeting" class="section sec-surface">
+    <div class="container">
+      <div class="meeting-banner gs-reveal">
+        <div class="mb-side">
+          <span class="mb-badge"><i class="ph ph-broadcast"></i> Live Collaboration</span>
+          <h2>Book a Live <span class="accent-text">Meeting</span> With Me</h2>
+          <p>Let's hop on a call to discuss your project, brainstorm ideas, or resolve any technical challenges in
+            real-time.</p>
+          <a href="tel:+923348910673" class="cta-button">
+            <span class="cta-label">Book a Meeting</span>
+            <span class="cta-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="mb-media">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?fit=crop&w=800&q=80"
+            alt="Working on a laptop" />
+        </div>
+
+        <div class="mb-side">
+          <span class="mb-badge"><i class="ph ph-clipboard-text"></i> What to Expect</span>
+          <h2>Meeting <span class="accent-text">Agenda</span></h2>
+          <p>A productive 1-on-1 session focused on actionable insights and strategy for your product.</p>
+          <ul class="mb-list">
+            <li><i class="ph ph-strategy"></i> Project Planning &amp; Strategy</li>
+            <li><i class="ph ph-tree-structure"></i> Technical Architecture</li>
+            <li><i class="ph ph-check-square"></i> Clear Next Steps</li>
+          </ul>
+        </div>
+
+        <div class="meeting-stats">
+          <div class="mstat">
+            <div class="mstat-num"><span class="counter" data-target="273">0</span>+</div>
+            <div class="mstat-label">Projects Delivered</div>
+          </div>
+          <div class="mstat">
+            <div class="mstat-num"><span class="counter" data-target="100">0</span>%</div>
+            <div class="mstat-label">Client Satisfaction</div>
+          </div>
+          <div class="mstat">
+            <div class="mstat-num"><span class="counter" data-target="4">0</span>+</div>
+            <div class="mstat-label">Years Experience</div>
+          </div>
+          <div class="mstat">
+            <div class="mstat-num">24h</div>
+            <div class="mstat-label">Response Time</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: Footer -->
+  <footer class="footer">
+    <!-- Footer Ticker -->
+    <div class="footer-ticker">
+      <div class="marquee-wrapper">
+        <div class="marquee-content">
+          <div class="ticker-track-item">AVAILABLE FOR FREELANCE <span class="ticker-plus">✦</span></div>
+          <div class="ticker-track-item">OPEN TO FULL-TIME ROLES <span class="ticker-plus">✦</span></div>
+          <div class="ticker-track-item">LET'S BUILD SOMETHING GREAT <span class="ticker-plus">✦</span></div>
+          <div class="ticker-track-item">NEXT.JS · REACT · NODE · AI <span class="ticker-plus">✦</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Footer CTA -->
+      <div class="footer-cta">
+        <h2>Have a Project? <span class="accent-text">Let's Talk.</span></h2>
+        <a href="#contact" class="cta-button">
+          <span class="cta-label">Start a Project</span>
+          <span class="cta-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- Footer Grid -->
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-icon"><img src="images/logo.png" alt="Hamza Zahoor logo" /></span>
+            <span>Hamza<span class="dot">.</span></span>
+          </div>
+          <p>Full-Stack Software Engineer, AI Expert, and SEO Specialist crafting modern, highly-optimized web
+            experiences.</p>
+          <div class="footer-social">
+            <a href="https://github.com/hamzaDev7" target="_blank" rel="noreferrer" class="social-icon"
+              aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+            <a href="https://www.linkedin.com/in/hamza-zahoor-9055b9371/?isSelfProfile=true" target="_blank"
+              rel="noreferrer" class="social-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="https://whatsapp.com/channel/0029VbDDY7l6rsQjZMjDQn2c" target="_blank" rel="noreferrer"
+              class="social-icon" aria-label="WhatsApp Channel"><i class="ph ph-whatsapp-logo"></i></a>
+            <a href="mailto:hamzazahooryts@gmail.com" class="social-icon" aria-label="Email"><i
+                class="ph ph-envelope-simple"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Projects</a>
+          <a href="#faq">FAQs</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <div class="fc-line"><i class="ph ph-envelope-simple"></i> hamzazahooryts@gmail.com</div>
+          <div class="fc-line"><i class="ph ph-phone"></i> <a href="tel:+923348910673"
+              style="color: inherit; display: inline;">03348910673</a></div>
+          <div class="fc-line"><i class="ph ph-map-pin"></i> Remote — Worldwide</div>
+          <div class="fc-line"><i class="ph ph-clock"></i> Replies within 24h</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay Updated</h4>
+          <p>Project updates and engineering tips, delivered monthly. No spam.</p>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Your email address" aria-label="Email for newsletter" />
+            <button id="newsletter-btn" type="button" aria-label="Subscribe"><i
+                class="ph ph-paper-plane-tilt"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>Copyright © 2026 Hamza Zahoor. All Rights Reserved.</div>
+        <div class="flex items-center gap-6">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#hero">Back to Top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Back to top"><i class="ph ph-arrow-up"></i></button>
+
+  <!-- Toast -->
+  <div id="copy-toast">
+    <i class="ph-bold ph-check-circle"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

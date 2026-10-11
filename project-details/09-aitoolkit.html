@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Toolkit Hub — Project Details | Hamza Zahoor</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="apple-touch-icon" href="../images/logo.png" />
+  <meta name="description"
+    content="Case study: AI Toolkit Hub — AI Productivity Workspace. Features, highlights, tech stack, and the live link. Built and documented by Hamza Zahoor." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Lenis Smooth Scrolling -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#F14F26',
+            'primary-dark': '#D8431E',
+            black: '#0E0E0E',
+            surface: '#F5F5F5',
+            border: '#ECECEC',
+            muted: '#6B6B6B'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+            accent: ['Instrument Serif', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body class="modal-page">
+
+  <!-- Blurred project grid backdrop -->
+  <div class="modal-bg" aria-hidden="true">
+    <img src="../images/projects/01-hostelhub.jpg" alt="" />
+    <img src="../images/projects/02-stackframe.jpg" alt="" />
+    <img src="../images/projects/03-eduadmin.jpg" alt="" />
+    <img src="../images/projects/04-nexusai.jpg" alt="" />
+    <img src="../images/projects/05-resultcard.jpg" alt="" />
+    <img src="../images/projects/06-kinetik.jpg" alt="" />
+    <img src="../images/projects/07-edueligible.jpg" alt="" />
+    <img src="../images/projects/08-pdfpro.jpg" alt="" />
+    <img src="../images/projects/09-aitoolkit.jpg" alt="" />
+  </div>
+  <div class="modal-dim" aria-hidden="true"></div>
+
+  <!-- Popup Card -->
+  <div class="modal-wrap">
+    <div class="modal-card gs-reveal">
+
+      <a href="../projects.html" class="modal-close" aria-label="Close project details"><i class="ph ph-x"></i></a>
+
+      <a href="../projects.html" class="mp-back"><i class="ph ph-arrow-left"></i> Back to all projects</a>
+
+      <div class="mp-cover">
+        <img src="../images/projects/09-aitoolkit.jpg" alt="AI Toolkit Hub project cover" />
+      </div>
+
+      <span class="mp-badge">AI Toolkit</span>
+      <h1 class="mp-title">AI Toolkit Hub <span class="accent-text">AI Productivity Workspace</span></h1>
+
+      <div class="mp-block">
+        <h2>About the Project</h2>
+        <p>AI Toolkit Hub packs hundreds of AI-powered tools and assistants into one modern workspace. PDF, image,
+          developer tools, calculators, converters, and AI assistants — all in one place.</p>
+      </div>
+
+      <div class="mp-block">
+        <h2>Main Features</h2>
+        <ul class="mp-features">
+          <li><i class="ph-bold ph-check-circle"></i> 150+ tools across 13 categories</li>
+          <li><i class="ph-bold ph-check-circle"></i> PDF, image & developer tools</li>
+          <li><i class="ph-bold ph-check-circle"></i> Calculators & converters</li>
+          <li><i class="ph-bold ph-check-circle"></i> Built-in AI assistants</li>
+          <li><i class="ph-bold ph-check-circle"></i> Guides, pricing & sign-in flows</li>
+          <li><i class="ph-bold ph-check-circle"></i> Everything runs in the browser</li>
+        </ul>
+      </div>
+
+      <div class="mp-block">
+        <h2>Key Highlights</h2>
+        <div class="mp-highlights">
+          <div class="mp-highlight">
+            <div class="mph-icon"><i class="ph ph-toolbox"></i></div>
+            <div class="mph-val">150+</div>
+            <div class="mph-label">Tools</div>
+          </div>
+          <div class="mp-highlight">
+            <div class="mph-icon"><i class="ph ph-squares-four"></i></div>
+            <div class="mph-val">13</div>
+            <div class="mph-label">Categories</div>
+          </div>
+          <div class="mp-highlight">
+            <div class="mph-icon"><i class="ph ph-robot"></i></div>
+            <div class="mph-val">AI</div>
+            <div class="mph-label">Powered</div>
+          </div>
+          <div class="mp-highlight">
+            <div class="mph-icon"><i class="ph ph-globe"></i></div>
+            <div class="mph-val">In-Browser</div>
+            <div class="mph-label">100%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mp-block">
+        <h2>Live Project</h2>
+        <a href="https://oneaitoolhub.lovable.app/" target="_blank" rel="noreferrer" class="net-btn course"><i
+            class="ph ph-arrow-up-right"></i> Visit Live Project</a>
+      </div>
+
+      <div class="mp-block">
+        <h2>Technologies Used</h2>
+        <div class="stack-pills">
+          <span>React</span>
+          <span>Lovable</span>
+          <span>AI APIs</span>
+          <span>Responsive Design</span>
+        </div>
+      </div>
+
+      <div class="mp-block" style="margin-bottom: 6px;">
+        <h2>Connect with me</h2>
+        <div class="mp-connect social-icons">
+          <a href="https://oneaitoolhub.lovable.app/" target="_blank" rel="noreferrer" class="social-icon"
+            aria-label="Live Project"><i class="ph ph-globe"></i></a>
+          <a href="https://whatsapp.com/channel/0029VbDDY7l6rsQjZMjDQn2c" target="_blank" rel="noreferrer"
+            class="social-icon" aria-label="WhatsApp Channel"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="https://github.com/hamzaDev7" target="_blank" rel="noreferrer" class="social-icon"
+            aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+          <a href="https://www.linkedin.com/in/hamza-zahoor-9055b9371/?isSelfProfile=true" target="_blank"
+            rel="noreferrer" class="social-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="mailto:hamzazahooryts@gmail.com" class="social-icon" aria-label="Email"><i
+              class="ph ph-envelope-simple"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="copy-toast">
+    <i class="ph-bold ph-check-circle"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

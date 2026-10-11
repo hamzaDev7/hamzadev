@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects — Hamza Zahoor</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <meta name="description"
+    content="Explore the complete portfolio archive of web applications, SaaS platforms, and design systems built by Hamza Zahoor." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Lenis Smooth Scrolling -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#F14F26',
+            'primary-dark': '#D8431E',
+            black: '#0E0E0E',
+            surface: '#F5F5F5',
+            border: '#ECECEC',
+            muted: '#6B6B6B'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+            accent: ['Instrument Serif', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Design System -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><img src="images/logo.png" alt="Hamza Zahoor logo" /></span>
+      <span>Hamza<span class="dot">.</span></span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="index.html#faq">FAQs</a>
+    </div>
+
+    <a href="index.html#contact" class="nav-cta">Contact Me</a>
+
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#faq">FAQs</a>
+    <a href="index.html#contact" class="nav-cta">Contact Me</a>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <span class="eyebrow gs-reveal">Project Archive</span>
+      <h1 class="gs-reveal">All <span class="accent-text">Projects</span><span class="sparkle-accent">✤</span></h1>
+      <p class="gs-reveal">A complete archive of the web applications, SaaS platforms, and design systems I've
+        engineered — from MVPs to production-scale products.</p>
+    </div>
+  </header>
+
+  <!-- Projects Grid -->
+  <section class="section sec-surface">
+    <div class="container">
+      <div class="project-grid gs-reveal gs-stagger-parent">
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/01-hostelhub.jpg" alt="HostelHub — Hostel Management System" loading="lazy" />
+            <div class="pc-overlay"><a href="https://hostel-hub-three-rho.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">HostelHub — Hostel Management System</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Management System</span>
+              <span class="pc-tag">Admin Panel</span>
+              <span class="pc-tag">Web App</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/01-hostelhub.html" class="pc-details">View Details</a>
+              <a href="https://hostel-hub-three-rho.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/02-stackframe.jpg" alt="Stackframe — Tech Publication" loading="lazy" />
+            <div class="pc-overlay"><a href="https://stackframe-eight.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Stackframe — Tech Publication</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Tech Blog</span>
+              <span class="pc-tag">Content Platform</span>
+              <span class="pc-tag">Web Dev</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/02-stackframe.html" class="pc-details">View Details</a>
+              <a href="https://stackframe-eight.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
+                <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/03-eduadmin.jpg" alt="EduAdmin School — Education Portal" loading="lazy" />
+            <div class="pc-overlay"><a href="https://eduadminschool.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">EduAdmin School — Education Portal</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Education</span>
+              <span class="pc-tag">React</span>
+              <span class="pc-tag">Admissions</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/03-eduadmin.html" class="pc-details">View Details</a>
+              <a href="https://eduadminschool.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
+                <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/04-nexusai.jpg" alt="Nexus AI — Unified Notes & Corporate Workspace"
+              loading="lazy" />
+            <div class="pc-overlay"><a href="https://nexusai-theta-liard.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Nexus AI — Unified Workspace</div>
+            <div class="pc-tags">
+              <span class="pc-tag">SaaS</span>
+              <span class="pc-tag">AI Notes</span>
+              <span class="pc-tag">CRM</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/04-nexusai.html" class="pc-details">View Details</a>
+              <a href="https://nexusai-theta-liard.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/05-resultcard.jpg" alt="Result Card Generator" loading="lazy" />
+            <div class="pc-overlay"><a href="https://result-card-generator-ebon.vercel.app/" target="_blank"
+                rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Result Card Generator</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Education</span>
+              <span class="pc-tag">Report Cards</span>
+              <span class="pc-tag">Web App</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/05-resultcard.html" class="pc-details">View Details</a>
+              <a href="https://result-card-generator-ebon.vercel.app/" target="_blank" rel="noreferrer"
+                class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/06-kinetik.jpg" alt="Kinetik AI — Turn long videos into short clips"
+              loading="lazy" />
+            <div class="pc-overlay"><a href="https://film-slice-smart.lovable.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Kinetik AI — Video to Clips</div>
+            <div class="pc-tags">
+              <span class="pc-tag">AI Video</span>
+              <span class="pc-tag">Scene Detection</span>
+              <span class="pc-tag">Video Editor</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/06-kinetik.html" class="pc-details">View Details</a>
+              <a href="https://film-slice-smart.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/07-edueligible.jpg" alt="EduEligible — Admission Criteria Checker"
+              loading="lazy" />
+            <div class="pc-overlay"><a href="https://eligibility-criteria.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">EduEligible — Admission Checker</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Education</span>
+              <span class="pc-tag">Merit Calculator</span>
+              <span class="pc-tag">Web App</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/07-edueligible.html" class="pc-details">View Details</a>
+              <a href="https://eligibility-criteria.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/08-pdfpro.jpg" alt="PDFPro Tools — 30 Free Online PDF Tools" loading="lazy" />
+            <div class="pc-overlay"><a href="https://pdfpro-gules.vercel.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">PDFPro Tools — 30 Free PDF Tools</div>
+            <div class="pc-tags">
+              <span class="pc-tag">PDF Tools</span>
+              <span class="pc-tag">Client-Side</span>
+              <span class="pc-tag">Utilities</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/08-pdfpro.html" class="pc-details">View Details</a>
+              <a href="https://pdfpro-gules.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
+                  class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/09-aitoolkit.jpg" alt="AI Toolkit Hub — Hundreds of AI tools in one place"
+              loading="lazy" />
+            <div class="pc-overlay"><a href="https://oneaitoolhub.lovable.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">AI Toolkit Hub</div>
+            <div class="pc-tags">
+              <span class="pc-tag">AI Tools</span>
+              <span class="pc-tag">Productivity</span>
+              <span class="pc-tag">Web App</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/09-aitoolkit.html" class="pc-details">View Details</a>
+              <a href="https://oneaitoolhub.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
+                  class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/10-pulsecrm.jpg" alt="Pulse CRM — Run your pipeline with calm clarity"
+              loading="lazy" />
+            <div class="pc-overlay"><a href="https://nurture-manage-grow.lovable.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Pulse CRM — Calm Pipeline</div>
+            <div class="pc-tags">
+              <span class="pc-tag">CRM</span>
+              <span class="pc-tag">Contacts &amp; Deals</span>
+              <span class="pc-tag">SaaS</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/10-pulsecrm.html" class="pc-details">View Details</a>
+              <a href="https://nurture-manage-grow.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/11-aegiscrm.jpg" alt="Aegis CRM — Sales that scale with intent" loading="lazy" />
+            <div class="pc-overlay"><a href="https://intent-flow-67.lovable.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Aegis CRM — Sales that Scale</div>
+            <div class="pc-tags">
+              <span class="pc-tag">AI CRM</span>
+              <span class="pc-tag">Sales Pipeline</span>
+              <span class="pc-tag">SaaS</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/11-aegiscrm.html" class="pc-details">View Details</a>
+              <a href="https://intent-flow-67.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
+                <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/12-utilitynest.jpg" alt="UtilityNest — 100+ Free Online Tools" loading="lazy" />
+            <div class="pc-overlay"><a href="https://everyday-essentials-zone.lovable.app/" target="_blank"
+                rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">UtilityNest — 100+ Online Tools</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Utilities</span>
+              <span class="pc-tag">Calculators</span>
+              <span class="pc-tag">AI Tools</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/12-utilitynest.html" class="pc-details">View Details</a>
+              <a href="https://everyday-essentials-zone.lovable.app/" target="_blank" rel="noreferrer"
+                class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child">
+          <div class="pc-image">
+            <img src="images/projects/13-hamatech.jpg" alt="HamzaTech Business — AI-native ERP" loading="lazy" />
+            <div class="pc-overlay"><a href="https://bizflow-aura.lovable.app/" target="_blank" rel="noreferrer"
+                class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">HamzaTech Business — AI ERP</div>
+            <div class="pc-tags">
+              <span class="pc-tag">ERP</span>
+              <span class="pc-tag">CRM &amp; HR</span>
+              <span class="pc-tag">Analytics</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/13-hamatech.html" class="pc-details">View Details</a>
+              <a href="https://bizflow-aura.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
+                  class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Back CTA -->
+      <div class="text-center gs-reveal" style="margin-top: 56px;">
+        <a href="index.html#portfolio" class="cta-button">
+          <span class="cta-label">Back to Home</span>
+          <span class="cta-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-ticker">
+      <div class="marquee-wrapper">
+        <div class="marquee-content">
+          <div class="ticker-track-item">AVAILABLE FOR FREELANCE <span class="ticker-plus">✦</span></div>
+          <div class="ticker-track-item">OPEN TO FULL-TIME ROLES <span class="ticker-plus">✦</span></div>
+          <div class="ticker-track-item">LET'S BUILD SOMETHING GREAT <span class="ticker-plus">✦</span></div>
+          <div class="ticker-track-item">NEXT.JS · REACT · NODE · AI <span class="ticker-plus">✦</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="footer-cta">
+        <h2>Have a Project? <span class="accent-text">Let's Talk.</span></h2>
+        <a href="index.html#contact" class="cta-button">
+          <span class="cta-label">Start a Project</span>
+          <span class="cta-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-icon"><img src="images/logo.png" alt="Hamza Zahoor logo" /></span>
+            <span>Hamza<span class="dot">.</span></span>
+          </div>
+          <p>Full-Stack Software Engineer, AI Expert, and SEO Specialist crafting modern, highly-optimized web
+            experiences.</p>
+          <div class="footer-social">
+            <a href="https://github.com/hamzaDev7" target="_blank" rel="noreferrer" class="social-icon"
+              aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+            <a href="https://www.linkedin.com/in/hamza-zahoor-9055b9371/?isSelfProfile=true" target="_blank"
+              rel="noreferrer" class="social-icon" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+            <a href="https://whatsapp.com/channel/0029VbDDY7l6rsQjZMjDQn2c" target="_blank" rel="noreferrer"
+              class="social-icon" aria-label="WhatsApp Channel"><i class="ph ph-whatsapp-logo"></i></a>
+            <a href="mailto:hamzazahooryts@gmail.com" class="social-icon" aria-label="Email"><i
+                class="ph ph-envelope-simple"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="index.html#hero">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="index.html#faq">FAQs</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <div class="fc-line"><i class="ph ph-envelope-simple"></i> hamzazahooryts@gmail.com</div>
+          <div class="fc-line"><i class="ph ph-map-pin"></i> Remote — Worldwide</div>
+          <div class="fc-line"><i class="ph ph-clock"></i> Replies within 24h</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay Updated</h4>
+          <p>Project updates and engineering tips, delivered monthly. No spam.</p>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Your email address" aria-label="Email for newsletter" />
+            <button id="newsletter-btn" type="button" aria-label="Subscribe"><i
+                class="ph ph-paper-plane-tilt"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright © 2026 Hamza Zahoor. All Rights Reserved.</div>
+        <div class="flex items-center gap-6">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="index.html#hero">Back to Top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Back to top"><i class="ph ph-arrow-up"></i></button>
+
+  <!-- Toast -->
+  <div id="copy-toast">
+    <i class="ph-bold ph-check-circle"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
