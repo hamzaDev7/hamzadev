@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#1a2744"/>
+    </linearGradient>
+    <linearGradient id="yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#FFA500"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="150" fill="#1e3a5f" opacity="0.3"/>
+  <circle cx="1100" cy="650" r="200" fill="#1e3a5f" opacity="0.3"/>
+  <circle cx="600" cy="375" r="300" fill="#1e3a5f" opacity="0.15"/>
+
+  <!-- Top badge -->
+  <rect x="350" y="25" width="500" height="50" rx="25" fill="none" stroke="#FFD700" stroke-width="2"/>
+  <text x="600" y="58" text-anchor="middle" fill="#FFD700" font-family="Arial,sans-serif" font-size="22" font-weight="bold" letter-spacing="2">THE ULTIMATE WEBSITE BUNDLE</text>
+
+  <!-- Main title -->
+  <text x="600" y="160" text-anchor="middle" fill="url(#yellow)" font-family="Arial,sans-serif" font-size="80" font-weight="bold">10,000+</text>
+  <text x="600" y="230" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="52" font-weight="bold">WordPress &amp; Shopify</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="280" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="18" letter-spacing="3">THEMES • TEMPLATES • PLUGINS • ELEMENTS • &amp; MORE</text>
+
+  <!-- WordPress Logo -->
+  <circle cx="320" cy="340" r="50" fill="#21759B"/>
+  <text x="320" y="355" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="40" font-weight="bold">W</text>
+  <text x="320" y="420" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="28" font-weight="bold">WordPress</text>
+  <text x="320" y="450" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="14">Build Any Website</text>
+
+  <!-- Divider -->
+  <rect x="600" y="290" width="2" height="180" fill="#334155"/>
+
+  <!-- Shopify Logo -->
+  <rect x="830" y="290" width="100" height="100" rx="15" fill="#95BF47"/>
+  <text x="880" y="355" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="50" font-weight="bold">S</text>
+  <text x="880" y="420" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="28" font-weight="bold">shopify</text>
+  <text x="880" y="450" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="14">Launch Your Store</text>
+
+  <!-- Price badge -->
+  <rect x="920" y="180" width="220" height="80" rx="15" fill="#FFD700" transform="rotate(-5 1030 220)"/>
+  <text x="1030" y="215" text-anchor="middle" fill="#0a1628" font-family="Arial,sans-serif" font-size="16" font-weight="bold" transform="rotate(-5 1030 220)">Just for</text>
+  <text x="1030" y="248" text-anchor="middle" fill="#0a1628" font-family="Arial,sans-serif" font-size="32" font-weight="bold" transform="rotate(-5 1030 220)">PKR 3,000</text>
+
+  <!-- Feature icons -->
+  <circle cx="80" cy="520" r="35" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="80" y="530" text-anchor="middle" fill="#3b82f6" font-family="Arial,sans-serif" font-size="20">🖥</text>
+  <text x="130" y="525" fill="#ffffff" font-family="Arial,sans-serif" font-size="14" font-weight="bold">Premium Themes</text>
+  <text x="130" y="548" fill="#94a3b8" font-family="Arial,sans-serif" font-size="12">Modern &amp; Responsive</text>
+
+  <circle cx="80" cy="590" r="35" fill="#1e3a5f" stroke="#22c55e" stroke-width="2"/>
+  <text x="80" y="600" text-anchor="middle" fill="#22c55e" font-family="Arial,sans-serif" font-size="20">🔌</text>
+  <text x="130" y="595" fill="#ffffff" font-family="Arial,sans-serif" font-size="14" font-weight="bold">Essential Plugins</text>
+  <text x="130" y="618" fill="#94a3b8" font-family="Arial,sans-serif" font-size="12">Extend Functionality</text>
+
+  <circle cx="80" cy="660" r="35" fill="#1e3a5f" stroke="#a855f7" stroke-width="2"/>
+  <text x="80" y="670" text-anchor="middle" fill="#a855f7" font-family="Arial,sans-serif" font-size="20">📄</text>
+  <text x="130" y="665" fill="#ffffff" font-family="Arial,sans-serif" font-size="14" font-weight="bold">Ready Templates</text>
+  <text x="130" y="688" fill="#94a3b8" font-family="Arial,sans-serif" font-size="12">For Every Niche</text>
+
+  <circle cx="350" cy="520" r="35" fill="#1e3a5f" stroke="#f59e0b" stroke-width="2"/>
+  <text x="350" y="530" text-anchor="middle" fill="#f59e0b" font-family="Arial,sans-serif" font-size="20">⚡</text>
+  <text x="400" y="525" fill="#ffffff" font-family="Arial,sans-serif" font-size="14" font-weight="bold">Design Elements</text>
+  <text x="400" y="548" fill="#94a3b8" font-family="Arial,sans-serif" font-size="12">Headers, Footers, Sections</text>
+
+  <circle cx="350" cy="590" r="35" fill="#1e3a5f" stroke="#eab308" stroke-width="2"/>
+  <text x="350" y="600" text-anchor="middle" fill="#eab308" font-family="Arial,sans-serif" font-size="20">👑</text>
+  <text x="400" y="595" fill="#ffffff" font-family="Arial,sans-serif" font-size="14" font-weight="bold">Lifetime Access</text>
+  <text x="400" y="618" fill="#94a3b8" font-family="Arial,sans-serif" font-size="12">One-Time Purchase</text>
+
+  <!-- Laptop mockups -->
+  <rect x="550" y="380" width="280" height="180" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <rect x="560" y="390" width="260" height="160" rx="5" fill="#ffffff"/>
+  <rect x="560" y="390" width="260" height="25" rx="5" fill="#f1f5f9"/>
+  <circle cx="575" cy="402" r="5" fill="#ef4444"/>
+  <circle cx="590" cy="402" r="5" fill="#f59e0b"/>
+  <circle cx="605" cy="402" r="5" fill="#22c55e"/>
+  <text x="690" y="445" text-anchor="middle" fill="#1e293b" font-family="Arial,sans-serif" font-size="18" font-weight="bold">Build Something Amazing</text>
+  <text x="690" y="475" text-anchor="middle" fill="#64748b" font-family="Arial,sans-serif" font-size="12">Modern. Flexible. Powerful.</text>
+  <rect x="640" y="495" width="100" height="30" rx="15" fill="#3b82f6"/>
+  <text x="690" y="515" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="12" font-weight="bold">Get Started</text>
+
+  <rect x="870" y="400" width="200" height="130" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <rect x="878" y="408" width="184" height="114" rx="5" fill="#ffffff"/>
+  <text x="970" y="445" text-anchor="middle" fill="#1e293b" font-family="Arial,sans-serif" font-size="14" font-weight="bold">New Arrivals</text>
+  <rect x="890" y="460" width="60" height="50" rx="5" fill="#e2e8f0"/>
+  <rect x="960" y="460" width="60" height="50" rx="5" fill="#e2e8f0"/>
+  <rect x="1030" y="460" width="60" height="50" rx="5" fill="#e2e8f0"/>
+
+  <!-- Bottom features bar -->
+  <rect x="0" y="700" width="1200" height="50" fill="#0f172a"/>
+  <rect x="100" y="710" width="120" height="4" rx="2" fill="#22c55e"/>
+  <text x="100" y="735" fill="#ffffff" font-family="Arial,sans-serif" font-size="12">100% Original</text>
+  <text x="230" y="735" fill="#94a3b8" font-family="Arial,sans-serif" font-size="10">Premium Quality</text>
+
+  <rect x="350" y="710" width="120" height="4" rx="2" fill="#3b82f6"/>
+  <text x="350" y="735" fill="#ffffff" font-family="Arial,sans-serif" font-size="12">Instant Download</text>
+  <text x="480" y="735" fill="#94a3b8" font-family="Arial,sans-serif" font-size="10">Start Immediately</text>
+
+  <rect x="600" y="710" width="120" height="4" rx="2" fill="#8b5cf6"/>
+  <text x="600" y="735" fill="#ffffff" font-family="Arial,sans-serif" font-size="12">Fully Responsive</text>
+  <text x="730" y="735" fill="#94a3b8" font-family="Arial,sans-serif" font-size="10">All Devices</text>
+
+  <rect x="850" y="710" width="120" height="4" rx="2" fill="#f59e0b"/>
+  <text x="850" y="735" fill="#ffffff" font-family="Arial,sans-serif" font-size="12">Easy to Install</text>
+  <text x="980" y="735" fill="#94a3b8" font-family="Arial,sans-serif" font-size="10">No Coding Needed</text>
+</svg>

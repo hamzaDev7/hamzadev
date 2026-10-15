@@ -10,8 +10,6 @@
   <meta name="description"
     content="Explore the complete portfolio archive of web applications, SaaS platforms, and design systems built by Hamza Zahoor." />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -26,29 +24,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#F14F26',
-            'primary-dark': '#D8431E',
-            black: '#0E0E0E',
-            surface: '#F5F5F5',
-            border: '#ECECEC',
-            muted: '#6B6B6B'
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            heading: ['Poppins', 'sans-serif'],
-            accent: ['Instrument Serif', 'serif']
-          }
-        }
-      }
-    }
-  </script>
 
   <!-- Custom Design System -->
   <link rel="stylesheet" href="css/style.css" />
@@ -98,12 +73,29 @@
     </div>
   </header>
 
+  <!-- Filter Bar -->
+  <section class="section sec-surface" style="padding-top: 0;">
+    <div class="container">
+      <div class="filter-bar gs-reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+        <button class="filter-btn" data-filter="crm">CRM</button>
+        <button class="filter-btn" data-filter="education">Education</button>
+        <button class="filter-btn" data-filter="ai">AI Tools</button>
+        <button class="filter-btn" data-filter="utilities">Utilities</button>
+        <button class="filter-btn" data-filter="google-apps">Google Apps Script</button>
+        <button class="filter-btn" data-filter="digital-bundle">Digital Bundle</button>
+        <button class="filter-btn" data-filter="locked">🔒 Premium</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Grid -->
   <section class="section sec-surface">
     <div class="container">
       <div class="project-grid gs-reveal gs-stagger-parent">
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="automation education management">
           <div class="pc-image">
             <img src="images/projects/01-hostelhub.jpg" alt="HostelHub — Hostel Management System" loading="lazy" />
             <div class="pc-overlay"><a href="https://hostel-hub-three-rho.vercel.app/" target="_blank" rel="noreferrer"
@@ -124,7 +116,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="utilities content">
           <div class="pc-image">
             <img src="images/projects/02-stackframe.jpg" alt="Stackframe — Tech Publication" loading="lazy" />
             <div class="pc-overlay"><a href="https://stackframe-eight.vercel.app/" target="_blank" rel="noreferrer"
@@ -139,13 +131,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/02-stackframe.html" class="pc-details">View Details</a>
-              <a href="https://stackframe-eight.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
-                <i class="ph ph-arrow-up-right"></i></a>
+              <a href="https://stackframe-eight.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="education react">
           <div class="pc-image">
             <img src="images/projects/03-eduadmin.jpg" alt="EduAdmin School — Education Portal" loading="lazy" />
             <div class="pc-overlay"><a href="https://eduadminschool.vercel.app/" target="_blank" rel="noreferrer"
@@ -160,13 +152,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/03-eduadmin.html" class="pc-details">View Details</a>
-              <a href="https://eduadminschool.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
-                <i class="ph ph-arrow-up-right"></i></a>
+              <a href="https://eduadminschool.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="ai crm saas">
           <div class="pc-image">
             <img src="images/projects/04-nexusai.jpg" alt="Nexus AI — Unified Notes & Corporate Workspace"
               loading="lazy" />
@@ -188,7 +180,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="education utilities">
           <div class="pc-image">
             <img src="images/projects/05-resultcard.jpg" alt="Result Card Generator" loading="lazy" />
             <div class="pc-overlay"><a href="https://result-card-generator-ebon.vercel.app/" target="_blank"
@@ -209,7 +201,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="ai video automation">
           <div class="pc-image">
             <img src="images/projects/06-kinetik.jpg" alt="Kinetik AI — Turn long videos into short clips"
               loading="lazy" />
@@ -231,7 +223,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="education utilities">
           <div class="pc-image">
             <img src="images/projects/07-edueligible.jpg" alt="EduEligible — Admission Criteria Checker"
               loading="lazy" />
@@ -253,7 +245,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="utilities productivity">
           <div class="pc-image">
             <img src="images/projects/08-pdfpro.jpg" alt="PDFPro Tools — 30 Free Online PDF Tools" loading="lazy" />
             <div class="pc-overlay"><a href="https://pdfpro-gules.vercel.app/" target="_blank" rel="noreferrer"
@@ -268,13 +260,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/08-pdfpro.html" class="pc-details">View Details</a>
-              <a href="https://pdfpro-gules.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
-                  class="ph ph-arrow-up-right"></i></a>
+              <a href="https://pdfpro-gules.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="ai productivity">
           <div class="pc-image">
             <img src="images/projects/09-aitoolkit.jpg" alt="AI Toolkit Hub — Hundreds of AI tools in one place"
               loading="lazy" />
@@ -290,13 +282,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/09-aitoolkit.html" class="pc-details">View Details</a>
-              <a href="https://oneaitoolhub.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
-                  class="ph ph-arrow-up-right"></i></a>
+              <a href="https://oneaitoolhub.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="crm saas automation">
           <div class="pc-image">
             <img src="images/projects/10-pulsecrm.jpg" alt="Pulse CRM — Run your pipeline with calm clarity"
               loading="lazy" />
@@ -318,7 +310,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="ai crm saas">
           <div class="pc-image">
             <img src="images/projects/11-aegiscrm.jpg" alt="Aegis CRM — Sales that scale with intent" loading="lazy" />
             <div class="pc-overlay"><a href="https://intent-flow-67.lovable.app/" target="_blank" rel="noreferrer"
@@ -333,13 +325,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/11-aegiscrm.html" class="pc-details">View Details</a>
-              <a href="https://intent-flow-67.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
-                <i class="ph ph-arrow-up-right"></i></a>
+              <a href="https://intent-flow-67.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="utilities ai">
           <div class="pc-image">
             <img src="images/projects/12-utilitynest.jpg" alt="UtilityNest — 100+ Free Online Tools" loading="lazy" />
             <div class="pc-overlay"><a href="https://everyday-essentials-zone.lovable.app/" target="_blank"
@@ -360,7 +352,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="automation crm ai">
           <div class="pc-image">
             <img src="images/projects/13-hamatech.jpg" alt="HamzaTech Business — AI-native ERP" loading="lazy" />
             <div class="pc-overlay"><a href="https://bizflow-aura.lovable.app/" target="_blank" rel="noreferrer"
@@ -375,13 +367,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/13-hamatech.html" class="pc-details">View Details</a>
-              <a href="https://bizflow-aura.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
-                  class="ph ph-arrow-up-right"></i></a>
+              <a href="https://bizflow-aura.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="utilities productivity">
           <div class="pc-image">
             <img src="images/projects/14-convertit.jpg" alt="Doc2Markdown — Documents to Markdown Converter"
               loading="lazy" />
@@ -403,7 +395,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="utilities media">
           <div class="pc-image">
             <img src="images/projects/15-pixelsruby.jpg" alt="Pexels Media Explorer — Free Stock Media Search"
               loading="lazy" />
@@ -419,13 +411,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/15-pixelsruby.html" class="pc-details">View Details</a>
-              <a href="https://pixels-ruby.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
-                <i class="ph ph-arrow-up-right"></i></a>
+              <a href="https://pixels-ruby.vercel.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="ai education automation">
           <div class="pc-image">
             <img src="images/projects/16-knowbuddy.jpg" alt="StudyPilot Blueprint — AI Study-Guide Side Hustle"
               loading="lazy" />
@@ -441,13 +433,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/16-knowbuddy.html" class="pc-details">View Details</a>
-              <a href="https://knowbuddy-bot.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
-                <i class="ph ph-arrow-up-right"></i></a>
+              <a href="https://knowbuddy-bot.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="ai saas automation">
           <div class="pc-image">
             <img src="images/projects/17-growthbuddy.jpg" alt="NexusAI — AI-Powered LinkedIn Growth Platform"
               loading="lazy" />
@@ -469,7 +461,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="automation ai">
           <div class="pc-image">
             <img src="images/projects/18-autospark.jpg" alt="HamzaFlow AI — Describe-it Workflow Automation"
               loading="lazy" />
@@ -491,7 +483,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="ai crm saas">
           <div class="pc-image">
             <img src="images/projects/19-zenflow.jpg" alt="Nucleus — AI-Powered Business Workspace" loading="lazy" />
             <div class="pc-overlay"><a href="https://zenflow-ai-workspace.lovable.app" target="_blank"
@@ -512,7 +504,7 @@
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="marketplace automation">
           <div class="pc-image">
             <img src="images/projects/20-devden.jpg" alt="ProjectVault — Verified Source Code Marketplace"
               loading="lazy" />
@@ -528,13 +520,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/20-devden.html" class="pc-details">View Details</a>
-              <a href="https://dev-den-market.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit Live
-                <i class="ph ph-arrow-up-right"></i></a>
+              <a href="https://dev-den-market.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="community education">
           <div class="pc-image">
             <img src="images/projects/21-codekro.jpg" alt="Code Kro — Community for Builders Who Ship"
               loading="lazy" />
@@ -550,13 +542,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/21-codekro.html" class="pc-details">View Details</a>
-              <a href="https://codekro-hub.lovable.app" target="_blank" rel="noreferrer" class="pc-live">Visit Live
-                <i class="ph ph-arrow-up-right"></i></a>
+              <a href="https://codekro-hub.lovable.app" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="portfolio ai">
           <div class="pc-image">
             <img src="images/projects/22-hamatech-site.jpg" alt="HAMZATECH — AI Software Agency Website"
               loading="lazy" />
@@ -572,13 +564,13 @@
             </div>
             <div class="pc-actions">
               <a href="project-details/22-hamatech-site.html" class="pc-details">View Details</a>
-              <a href="https://hamzatech.lovable.app" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i
-                  class="ph ph-arrow-up-right"></i></a>
+              <a href="https://hamzatech.lovable.app" target="_blank" rel="noreferrer" class="pc-live">Visit
+                Live <i class="ph ph-arrow-up-right"></i></a>
             </div>
           </div>
         </div>
 
-        <div class="project-card gs-stagger-child">
+        <div class="project-card gs-stagger-child" data-category="ai education saas">
           <div class="pc-image">
             <img src="images/projects/23-skillbridge.jpg" alt="SkillBridge AI — Personalized Career Roadmaps"
               loading="lazy" />
@@ -596,6 +588,190 @@
               <a href="project-details/23-skillbridge.html" class="pc-details">View Details</a>
               <a href="https://skilbridgeai.lovable.app/" target="_blank" rel="noreferrer" class="pc-live">Visit
                 Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Script Projects (Premium/Locked) -->
+        <div class="project-card gs-stagger-child locked-project" data-category="google-apps automation locked">
+          <div class="pc-image">
+            <img src="images/projects/24-gscript1.svg" alt="Google Script Project 1" loading="lazy" />
+            <div class="pc-overlay">
+              <span class="lock-badge" title="Locked - requires purchase">🔒</span>
+              <a href="https://script.google.com/macros/s/AKfycbzCgmRApvqh0oXJ0-aT2-Aiosd8dq9TtvLzLBOdj6SEZQKQfwhiehNGataMWadMDuEH/exec" target="_blank" rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">AI Support Chatbot</div>
+            <div class="pc-tags">
+              <span class="pc-tag">AI Chatbot</span>
+              <span class="pc-tag">Google Apps</span>
+              <span class="pc-tag">Script</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/24-gscript1.html" class="pc-details">View Details</a>
+              <a href="https://script.google.com/macros/s/AKfycbzCgmRApvqh0oXJ0-aT2-Aiosd8dq9TtvLzLBOdj6SEZQKQfwhiehNGataMWadMDuEH/exec" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+              <button class="pc-pay-btn" data-project="gscript1" data-price="4200" data-usd="15" data-name="AI Support Chatbot">Unlock — ₨4,200 ($15)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child locked-project" data-category="google-apps automation locked">
+          <div class="pc-image">
+            <img src="images/projects/25-gscript2.svg" alt="Google Script Project 2" loading="lazy" />
+            <div class="pc-overlay">
+              <span class="lock-badge" title="Locked - requires purchase">🔒</span>
+              <a href="https://script.google.com/macros/s/AKfycbz3t2W8emIBa6USW08DnRNImjGJUwKXOr-rRF2PcttIH3dy-Zs9xXD2JGD5xKMqKtrS/exec" target="_blank" rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Event Management System</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Events</span>
+              <span class="pc-tag">Google Apps</span>
+              <span class="pc-tag">Script</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/25-gscript2.html" class="pc-details">View Details</a>
+              <a href="https://script.google.com/macros/s/AKfycbz3t2W8emIBa6USW08DnRNImjGJUwKXOr-rRF2PcttIH3dy-Zs9xXD2JGD5xKMqKtrS/exec" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+              <button class="pc-pay-btn" data-project="gscript2" data-price="5600" data-usd="20" data-name="Event Management System">Unlock — ₨5,600 ($20)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child locked-project" data-category="google-apps data locked">
+          <div class="pc-image">
+            <img src="images/projects/26-gscript3.svg" alt="Google Script Project 3" loading="lazy" />
+            <div class="pc-overlay">
+              <span class="lock-badge" title="Locked - requires purchase">🔒</span>
+              <a href="https://script.google.com/macros/s/AKfycbzD3YkbEhZFUD5HA1ZqCKbrJ08yrQ79OiV18eO3ABrAxHZ9j8uw7p5IG9JqjHOJudFi/exec" target="_blank" rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">System Login Portal</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Authentication</span>
+              <span class="pc-tag">Google Apps</span>
+              <span class="pc-tag">Script</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/26-gscript3.html" class="pc-details">View Details</a>
+              <a href="https://script.google.com/macros/s/AKfycbzD3YkbEhZFUD5HA1ZqCKbrJ08yrQ79OiV18eO3ABrAxHZ9j8uw7p5IG9JqjHOJudFi/exec" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+              <button class="pc-pay-btn" data-project="gscript3" data-price="7000" data-usd="25" data-name="System Login Portal">Unlock — ₨7,000 ($25)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child locked-project" data-category="google-apps productivity locked">
+          <div class="pc-image">
+            <img src="images/projects/27-gscript4.svg" alt="Google Script Project 4" loading="lazy" />
+            <div class="pc-overlay">
+              <span class="lock-badge" title="Locked - requires purchase">🔒</span>
+              <a href="https://script.google.com/macros/s/AKfycby6fgb_NIaNbO3HALeVPdY8WNCZuSrL4lm1ya7ssjMt9r8-Ud89DJ8U7d8eMiZ-Udjw/exec" target="_blank" rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Cheque Management System</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Finance</span>
+              <span class="pc-tag">Google Apps</span>
+              <span class="pc-tag">Script</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/27-gscript4.html" class="pc-details">View Details</a>
+              <a href="https://script.google.com/macros/s/AKfycby6fgb_NIaNbO3HALeVPdY8WNCZuSrL4lm1ya7ssjMt9r8-Ud89DJ8U7d8eMiZ-Udjw/exec" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+              <button class="pc-pay-btn" data-project="gscript4" data-price="5040" data-usd="18" data-name="Cheque Management System">Unlock — ₨5,040 ($18)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child locked-project" data-category="google-apps backend locked">
+          <div class="pc-image">
+            <img src="images/projects/29-gscript6.svg" alt="Google Script Project 6" loading="lazy" />
+            <div class="pc-overlay">
+              <span class="lock-badge" title="Locked - requires purchase">🔒</span>
+              <a href="https://script.google.com/macros/s/AKfycbzlL5D46g8gyyTSD2I3BDYMwMBXjc-KfGlj7B6fIIN_9bdjnaHpTw1eQOUsqY8XYFxS/exec" target="_blank" rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Vehicle Payment System</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Payment</span>
+              <span class="pc-tag">Google Apps</span>
+              <span class="pc-tag">Script</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/29-gscript6.html" class="pc-details">View Details</a>
+              <a href="https://script.google.com/macros/s/AKfycbzlL5D46g8gyyTSD2I3BDYMwMBXjc-KfGlj7B6fIIN_9bdjnaHpTw1eQOUsqY8XYFxS/exec" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+              <button class="pc-pay-btn" data-project="gscript6" data-price="6160" data-usd="22" data-name="Vehicle Payment System">Unlock — ₨6,160 ($22)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child locked-project" data-category="google-apps notification locked">
+          <div class="pc-image">
+            <img src="images/projects/30-gscript7.svg" alt="Google Script Project 7" loading="lazy" />
+            <div class="pc-overlay">
+              <span class="lock-badge" title="Locked - requires purchase">🔒</span>
+              <a href="https://script.google.com/macros/s/AKfycby7hdVcpNKJa6bet1p7fKNuxehedTBoD0duuMxT23TonjEwZ_JGSjm0yp5L5pn16CoC/exec" target="_blank" rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Application Form System</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Form</span>
+              <span class="pc-tag">Google Apps</span>
+              <span class="pc-tag">Script</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/30-gscript7.html" class="pc-details">View Details</a>
+              <a href="https://script.google.com/macros/s/AKfycby7hdVcpNKJa6bet1p7fKNuxehedTBoD0duuMxT23TonjEwZ_JGSjm0yp5L5pn16CoC/exec" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+              <button class="pc-pay-btn" data-project="gscript7" data-price="3360" data-usd="12" data-name="Application Form System">Unlock — ₨3,360 ($12)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card gs-stagger-child locked-project" data-category="google-apps integration locked">
+          <div class="pc-image">
+            <img src="images/projects/31-gscript8.svg" alt="Admit Card Search" loading="lazy" />
+            <div class="pc-overlay">
+              <span class="lock-badge" title="Locked - requires purchase">🔒</span>
+              <a href="https://script.google.com/macros/s/AKfycbw_1AN3N0Vwc6CPFZXIb7Pm0-IOwnoWcW3bJWUgmo4d_4Ncu5uiXx_dOdHw3WuTLbV0/exec" target="_blank" rel="noreferrer" class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">Admit Card Search</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Education</span>
+              <span class="pc-tag">Google Apps</span>
+              <span class="pc-tag">Script</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/31-gscript8.html" class="pc-details">View Details</a>
+              <a href="https://script.google.com/macros/s/AKfycbw_1AN3N0Vwc6CPFZXIb7Pm0-IOwnoWcW3bJWUgmo4d_4Ncu5uiXx_dOdHw3WuTLbV0/exec" target="_blank" rel="noreferrer" class="pc-live">Visit Live <i class="ph ph-arrow-up-right"></i></a>
+              <button class="pc-pay-btn" data-project="gscript8" data-price="7840" data-usd="28" data-name="Admit Card Search">Unlock — ₨7,840 ($28)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Bundle -->
+        <div class="project-card gs-stagger-child locked-project" data-category="digital-bundle locked">
+          <div class="pc-image">
+            <img src="images/projects/32-coursebundle.svg" alt="10,000+ WordPress & Shopify Bundle" loading="lazy" />
+            <div class="pc-overlay">
+              <span class="lock-badge" title="Locked - requires purchase">🔒</span>
+            </div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-title">10,000+ WordPress &amp; Shopify Bundle</div>
+            <div class="pc-tags">
+              <span class="pc-tag">Digital Bundle</span>
+              <span class="pc-tag">WordPress</span>
+              <span class="pc-tag">Shopify</span>
+            </div>
+            <div class="pc-actions">
+              <a href="project-details/32-coursebundle.html" class="pc-details">View Details</a>
+              <button class="pc-pay-btn" data-project="coursebundle" data-price="3000" data-usd="11" data-name="10,000+ WordPress & Shopify Bundle">Unlock — ₨3,000 ($11)</button>
             </div>
           </div>
         </div>

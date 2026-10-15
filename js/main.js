@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ------------------------------------------------------------------
-    // 10. Contact form (submits via FormSubmit → hamzazahooryts@gmail.com)
+    // 11. Contact form (submits via FormSubmit → hamzazahooryts@gmail.com)
     // ------------------------------------------------------------------
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ------------------------------------------------------------------
-    // 11. Newsletter button
+    // 12. Newsletter button
     // ------------------------------------------------------------------
     const newsletterBtn = document.getElementById('newsletter-btn');
     if (newsletterBtn) {
@@ -353,4 +353,142 @@ document.addEventListener('DOMContentLoaded', () => {
             input.value = '';
         });
     }
+
+    // ------------------------------------------------------------------
+    // 13. Project filtering
+    // ------------------------------------------------------------------
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+
+            // Update active button
+            filterBtns.forEach((b) => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filter cards
+            projectCards.forEach((card) => {
+                const categories = card.getAttribute('data-category') || '';
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.style.display = '';
+                    if (hasGSAP) {
+                        gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // ------------------------------------------------------------------
+    // 14. Locked project unlock modal + WhatsApp payment
+    // ------------------------------------------------------------------
+    const WHATSAPP_NUMBER = '923348910673'; // Pakistan (+92)
+
+    function openUnlockModal(projectName, price, usdPrice) {
+        // Create modal if it doesn't exist
+        let modal = document.getElementById('unlock-modal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'unlock-modal';
+            modal.className = 'unlock-modal';
+            modal.innerHTML = `
+                <div class="unlock-modal-overlay"></div>
+                <div class="unlock-modal-card">
+                    <button class="unlock-modal-close" aria-label="Close">&times;</button>
+                    <div class="unlock-modal-icon">🔒</div>
+                    <h3>This Project is Locked</h3>
+                    <p class="unlock-modal-desc">Want to unlock full access to <strong class="unlock-project-name"></strong>?</p>
+                    <div class="unlock-price-tag">
+                        <span class="unlock-price-label">Unlock Price</span>
+                        <span class="unlock-price-value"></span>
+                        <span class="unlock-price-usd"></span>
+                    </div>
+                    <p class="unlock-features">
+                        <i class="ph-bold ph-check-circle"></i> Full source code access<br>
+                        <i class="ph-bold ph-check-circle"></i> Complete documentation<br>
+                        <i class="ph-bold ph-check-circle"></i> Deployment guide<br>
+                        <i class="ph-bold ph-check-circle"></i> 30-day support
+                    </p>
+                    <button class="unlock-whatsapp-btn">
+                        <i class="ph ph-whatsapp-logo"></i>
+                        Pay via WhatsApp
+                    </button>
+                    <p class="unlock-note">You'll be redirected to WhatsApp to complete your payment</p>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            // Close handlers
+            modal.querySelector('.unlock-modal-close').addEventListener('click', closeUnlockModal);
+            modal.querySelector('.unlock-modal-overlay').addEventListener('click', closeUnlockModal);
+        }
+
+        // Update content
+        modal.querySelector('.unlock-project-name').textContent = projectName;
+        modal.querySelector('.unlock-price-value').textContent = '₨' + Number(price).toLocaleString() + ' PKR';
+        modal.querySelector('.unlock-price-usd').textContent = '(≈ $' + usdPrice + ' USD)';
+
+        // WhatsApp button handler
+        const waBtn = modal.querySelector('.unlock-whatsapp-btn');
+        waBtn.onclick = () => {
+            const message = encodeURIComponent(
+                `Hi Hamza! I want to unlock "${projectName}" for ₨${Number(price).toLocaleString()} PKR (≈ $${usdPrice} USD).\n\nPlease share payment details.`
+            );
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+            closeUnlockModal();
+        };
+
+        // Show modal
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeUnlockModal() {
+        const modal = document.getElementById('unlock-modal');
+        if (modal) {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Bind all pay buttons
+    document.querySelectorAll('.pc-pay-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const projectName = btn.getAttribute('data-name') || 'this project';
+            const price = btn.getAttribute('data-price') || '0';
+            const usdPrice = btn.getAttribute('data-usd') || '0';
+            openUnlockModal(projectName, price, usdPrice);
+        });
+    });
+
+    // ------------------------------------------------------------------
+    // 15. Project detail pages — lock/unlock inline
+    // ------------------------------------------------------------------
+    document.querySelectorAll('.pc-unlock-inline').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const projectName = btn.getAttribute('data-name') || 'this project';
+            const price = btn.getAttribute('data-price') || '0';
+            const usdPrice = btn.getAttribute('data-usd') || '0';
+            openUnlockModal(projectName, price, usdPrice);
+        });
+    });
+
+    // ------------------------------------------------------------------
+    // 16. Live status indicator (pulse animation for live projects)
+    // ------------------------------------------------------------------
+    document.querySelectorAll('.live-indicator').forEach((el) => {
+        if (hasGSAP) {
+            gsap.to(el.querySelector('.live-dot'), {
+                opacity: 0.3,
+                duration: 1,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut',
+            });
+        }
+    });
 });
