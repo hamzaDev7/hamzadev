@@ -49,12 +49,15 @@
       <a href="#faq">FAQs</a>
     </div>
 
-    <a href="#contact" class="nav-cta">Contact Me</a>
+    <a href="#contact" class="nav-cta"><span class="nav-cta-dot"></span>Contact Me</a>
 
     <!-- Hamburger -->
     <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
+
+    <!-- Scroll progress bar -->
+    <div class="nav-progress" aria-hidden="true"><span></span></div>
   </nav>
 
   <!-- Mobile Menu -->
@@ -70,9 +73,17 @@
 
   <!-- SECTION 1: Hero -->
   <section id="hero" class="hero-section">
+    <!-- Ambient background video (gracefully falls back to the gradient if unavailable) -->
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="videos/hero-bg.mp4" type="video/mp4" />
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-with-a-network-of-connections-41500-large.mp4"
+        type="video/mp4" />
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-network-connections-4067-large.mp4"
+        type="video/mp4" />
+    </video>
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="hero-subtitle gs-reveal">— Hello, I'm Hamza</div>
+        <div class="hero-subtitle gs-reveal"><span class="sub-dot"></span> Hello, I'm Hamza</div>
         <h1 class="hero-title gs-reveal">I Build <span class="accent-text">Digital</span><br />Experiences</h1>
         <p class="hero-desc gs-reveal">Full-Stack Software Engineer, AI Expert, and SEO Specialist. I craft
           pixel-perfect, premium web applications that convert and scale.</p>
@@ -104,9 +115,26 @@
             <div class="stat-label">Years of Experience</div>
           </div>
         </div>
+
+        <div class="hero-trust gs-reveal">
+          <div class="trust-avatars">
+            <img src="images/logos/openai.svg" alt="" />
+            <img src="images/logos/claude.svg" alt="" />
+            <img src="images/logos/google.svg" alt="" />
+            <img src="images/logos/microsoft.svg" alt="" />
+          </div>
+          <div class="trust-text">
+            <div class="trust-stars">
+              <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+            </div>
+            <span>Trusted by founders &amp; product teams worldwide</span>
+          </div>
+        </div>
       </div>
 
       <div class="hero-image-wrapper gs-reveal">
+        <div class="hero-orbit" aria-hidden="true"></div>
         <div class="hero-arch">
           <img src="images/hero-person.jpg" alt="Hamza Zahoor — Thumbs up" />
         </div>
@@ -201,11 +229,20 @@
   <section id="about" class="section sec-white">
     <div class="container about-grid">
       <div class="about-image-wrapper gs-reveal">
+        <div class="about-glow"></div>
         <div class="about-arch">
           <picture>
             <source media="(max-width: 768px)" srcset="images/about-person-mobile.jpg" />
             <img src="images/about-person.jpg" alt="About Hamza Zahoor" />
           </picture>
+        </div>
+        <div class="about-status">
+          <span class="status-dot"></span>
+          Available for Work
+        </div>
+        <div class="about-exp-badge">
+          <i class="ph-fill ph-rocket-launch"></i>
+          <div><strong>5+ yrs</strong><span>Building Products</span></div>
         </div>
       </div>
       <div class="about-content">
@@ -214,6 +251,13 @@
         <p class="gs-reveal">I am a passionate Full-Stack Software Engineer, AI Expert, and SEO Specialist. With
           out-of-the-box thinking, I build premium, lightning-fast digital products that are perfectly optimized for
           both users and search engines.</p>
+
+        <div class="about-expertise gs-reveal gs-stagger-parent">
+          <span class="exp-chip gs-stagger-child"><i class="ph ph-code"></i> Full-Stack</span>
+          <span class="exp-chip gs-stagger-child"><i class="ph ph-sparkle"></i> AI &amp; LLMs</span>
+          <span class="exp-chip gs-stagger-child"><i class="ph ph-magnifying-glass"></i> SEO</span>
+          <span class="exp-chip gs-stagger-child"><i class="ph ph-robot"></i> Automation</span>
+        </div>
 
         <div class="about-stats gs-reveal gs-stagger-parent">
           <div class="about-stat gs-stagger-child">
@@ -314,42 +358,82 @@
 
       <div class="tools-grid gs-reveal gs-stagger-parent">
         <div class="tool-card gs-stagger-child">
-          <div class="tool-icon" style="background:#F4EDE8;"><img src="https://cdn.simpleicons.org/claude/D97757"
-              alt="Claude AI logo" /></div>
+          <div class="tool-icon" style="background:#F4EDE8;"><img src="images/logos/claude.svg" alt="Claude AI logo" /></div>
           <div class="tool-pct">98<span>%</span></div>
+          <div class="tool-bar"><span style="width:98%"></span></div>
           <div class="tool-name">Claude AI</div>
         </div>
         <div class="tool-card gs-stagger-child">
-          <div class="tool-icon" style="background:#EFEFEF;"><img src="https://cdn.simpleicons.org/cursor/000000"
+          <div class="tool-icon" style="background:#EFEFEF;"><img src="images/logos/cursor-icon.svg"
               alt="Cursor logo" /></div>
           <div class="tool-pct">95<span>%</span></div>
+          <div class="tool-bar"><span style="width:95%"></span></div>
           <div class="tool-name">Cursor</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#FFF3E9;"><img src="images/logos/codex.svg"
+              alt="OpenAI Codex logo" /></div>
+          <div class="tool-pct">94<span>%</span></div>
+          <div class="tool-bar"><span style="width:94%"></span></div>
+          <div class="tool-name">Codex</div>
         </div>
         <div class="tool-card gs-stagger-child">
           <div class="tool-icon" style="background:#E9F2FD;"><img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
               alt="VS Code logo" /></div>
           <div class="tool-pct">92<span>%</span></div>
+          <div class="tool-bar"><span style="width:92%"></span></div>
           <div class="tool-name">VS Code</div>
         </div>
         <div class="tool-card gs-stagger-child">
-          <div class="tool-icon" style="background:#F1F1F1;"><img src="https://cdn.simpleicons.org/github/181717"
-              alt="GitHub logo" /></div>
+          <div class="tool-icon" style="background:#F3EEFF;"><img src="images/logos/antigravity.svg"
+              alt="Antigravity logo" /></div>
           <div class="tool-pct">90<span>%</span></div>
+          <div class="tool-bar"><span style="width:90%"></span></div>
+          <div class="tool-name">Antigravity</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#F1F1F1;"><img src="images/logos/github.svg" alt="GitHub logo" /></div>
+          <div class="tool-pct">90<span>%</span></div>
+          <div class="tool-bar"><span style="width:90%"></span></div>
           <div class="tool-name">GitHub</div>
         </div>
         <div class="tool-card gs-stagger-child">
-          <div class="tool-icon" style="background:#FDF3E4;"><img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
-              alt="Figma logo" /></div>
+          <div class="tool-icon" style="background:#FFF0E6;"><img src="images/logos/replit.svg" alt="Replit logo" /></div>
           <div class="tool-pct">88<span>%</span></div>
+          <div class="tool-bar"><span style="width:88%"></span></div>
+          <div class="tool-name">Replit</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#FDF3E4;"><img src="images/logos/figma.svg" alt="Figma logo" /></div>
+          <div class="tool-pct">87<span>%</span></div>
+          <div class="tool-bar"><span style="width:87%"></span></div>
           <div class="tool-name">Figma</div>
         </div>
         <div class="tool-card gs-stagger-child">
-          <div class="tool-icon" style="background:#E8F3FD;"><img src="https://cdn.simpleicons.org/docker/2496ED"
-              alt="Docker logo" /></div>
+          <div class="tool-icon" style="background:#E8F3FD;"><img src="images/logos/docker.svg" alt="Docker logo" /></div>
           <div class="tool-pct">85<span>%</span></div>
+          <div class="tool-bar"><span style="width:85%"></span></div>
           <div class="tool-name">Docker</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#FFE9F0;"><img src="images/logos/lovable.svg" alt="Lovable logo" /></div>
+          <div class="tool-pct">84<span>%</span></div>
+          <div class="tool-bar"><span style="width:84%"></span></div>
+          <div class="tool-name">Lovable</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#EAF8EE;"><img src="images/logos/microsoft.svg"
+              alt="Microsoft logo" /></div>
+          <div class="tool-pct">82<span>%</span></div>
+          <div class="tool-bar"><span style="width:82%"></span></div>
+          <div class="tool-name">Microsoft</div>
+        </div>
+        <div class="tool-card gs-stagger-child">
+          <div class="tool-icon" style="background:#EDEFF7;"><img src="images/logos/opencode.svg" alt="OpenCode logo" /></div>
+          <div class="tool-pct">80<span>%</span></div>
+          <div class="tool-bar"><span style="width:80%"></span></div>
+          <div class="tool-name">OpenCode</div>
         </div>
       </div>
     </div>
@@ -369,7 +453,10 @@
         <div class="timeline gs-stagger-parent">
           <div class="timeline-item gs-stagger-child">
             <div class="timeline-card">
-              <div class="tl-year">2023 – Present</div>
+              <div class="tl-badge work">
+                <div class="tl-icon"><i class="ph ph-briefcase"></i></div>
+                <div class="tl-year">2023 – Present</div>
+              </div>
               <div class="tl-title">Senior Full-Stack Engineer</div>
               <div class="tl-org">Nexus Labs — San Francisco / Remote</div>
               <div class="tl-desc">Leading frontend and API modernization for high-traffic client portals using Next.js,
@@ -378,7 +465,10 @@
           </div>
           <div class="timeline-item gs-stagger-child">
             <div class="timeline-card">
-              <div class="tl-year">2021 – 2023</div>
+              <div class="tl-badge work">
+                <div class="tl-icon"><i class="ph ph-briefcase"></i></div>
+                <div class="tl-year">2021 – 2023</div>
+              </div>
               <div class="tl-title">Software Engineer</div>
               <div class="tl-org">DevPulse Technologies — Full-Stack Consultant</div>
               <div class="tl-desc">Built modular React interfaces, centralized design systems, and RESTful Node.js
@@ -387,7 +477,10 @@
           </div>
           <div class="timeline-item gs-stagger-child">
             <div class="timeline-card">
-              <div class="tl-year">09/2025 – Present</div>
+              <div class="tl-badge edu">
+                <div class="tl-icon"><i class="ph ph-graduation-cap"></i></div>
+                <div class="tl-year">09/2025 – Present</div>
+              </div>
               <div class="tl-title">B.S. Computer Science (Artificial Intelligence)</div>
               <div class="tl-org">University of Gujrat, Gujrat</div>
               <div class="tl-desc">Current CGPA: 3.36/4.00. Relevant Coursework: Programming Fundamentals, OOP.</div>
@@ -395,7 +488,10 @@
           </div>
           <div class="timeline-item gs-stagger-child">
             <div class="timeline-card">
-              <div class="tl-year">2023 – 2025</div>
+              <div class="tl-badge edu">
+                <div class="tl-icon"><i class="ph ph-graduation-cap"></i></div>
+                <div class="tl-year">2023 – 2025</div>
+              </div>
               <div class="tl-title">Intermediate (F.Sc. — Pre-Medical)</div>
               <div class="tl-org">Faran Boys Higher Secondary School, Pir Mahal — BISE Faisalabad</div>
               <div class="tl-desc">82% Marks — Honhaar Scholarship Recipient.</div>
@@ -403,7 +499,10 @@
           </div>
           <div class="timeline-item gs-stagger-child">
             <div class="timeline-card">
-              <div class="tl-year">2021 – 2023</div>
+              <div class="tl-badge edu">
+                <div class="tl-icon"><i class="ph ph-graduation-cap"></i></div>
+                <div class="tl-year">2021 – 2023</div>
+              </div>
               <div class="tl-title">Matriculation (Science)</div>
               <div class="tl-org">Government High School No. 1, Pir Mahal — BISE Faisalabad</div>
               <div class="tl-desc">92% Marks.</div>
@@ -421,15 +520,78 @@
         <span class="eyebrow centered gs-reveal">Certifications &amp; Wins</span>
         <h2 class="gs-reveal">My Winning <span class="accent-text">Award Journey</span><span
             class="sparkle-accent">✤</span></h2>
-        <p class="gs-reveal">11 verified certificates — courses, internships, and bootcamps. Click "View Certificate" to
+        <div class="cert-flourish gs-reveal"><span></span><i class="ph-fill ph-award"></i><span></span></div>
+        <p class="gs-reveal">13 verified certificates — courses, internships, and bootcamps. Click "View Certificate" to
           open the actual PDF.</p>
+        <div class="cert-stats gs-reveal">
+          <div class="cert-stat"><strong>13</strong><span>Certificates</span></div>
+          <div class="cert-stat"><strong>9</strong><span>Issuers</span></div>
+          <div class="cert-stat"><strong>100%</strong><span>Verified</span></div>
+        </div>
       </div>
     </div>
 
+    <!-- FEATURED CERTIFICATES -->
+    <div class="container">
+      <div class="featured-label gs-reveal"><i class="ph-fill ph-star-four"></i> Featured Certifications</div>
+      <div class="featured-grid">
+
+        <article class="cert-showcase gs-reveal" data-theme="emerald">
+          <div class="cs-ribbon">Skilled Performer</div>
+          <div class="cs-seal">
+            <i class="ph-fill ph-award"></i>
+            <svg class="cs-seal-ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" /></svg>
+          </div>
+          <div class="cs-inner">
+            <img class="cs-logo" src="images/logos/pak-angels.svg" alt="Pak Angels">
+            <span class="cs-eyebrow">Certificate of Achievement</span>
+            <h3 class="cs-title">Generative &amp; Agentic AI Application Developer</h3>
+            <p class="cs-text">Successfully completed the Pak Angels Generative &amp; Agentic AI Training — Cohort 11
+              (Aug–Oct 2026), building production-grade LLM and agentic applications.</p>
+            <div class="cs-meta">
+              <div><span>Issued By</span><strong>Pak Angels</strong></div>
+              <div><span>Date</span><strong>Oct 17, 2026</strong></div>
+              <div><span>Certificate ID</span><strong>PAGAI-SP-0035</strong></div>
+            </div>
+            <a href="certificates/cert-12-generative-agentic-ai.pdf.jpeg" target="_blank" rel="noreferrer"
+              class="cs-btn">View Certificate <i class="ph ph-arrow-up-right"></i></a>
+          </div>
+        </article>
+
+        <article class="cert-showcase gs-reveal" data-theme="ocean">
+          <div class="cs-ribbon">Career Ready</div>
+          <div class="cs-seal">
+            <i class="ph-fill ph-graduation-cap"></i>
+            <svg class="cs-seal-ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" /></svg>
+          </div>
+          <div class="cs-inner">
+            <img class="cs-logo cs-logo-wide" src="images/logos/hp-life.svg" alt="HP LIFE">
+            <span class="cs-eyebrow">Certificate of Completion</span>
+            <h3 class="cs-title">Professional Networking for Career Growth</h3>
+            <p class="cs-text">HP LIFE course covering networking strategies, relationship building, and career
+              advancement through meaningful professional connections.</p>
+            <div class="cs-meta">
+              <div><span>Issued By</span><strong>HP LIFE · HP Foundation</strong></div>
+              <div><span>Date</span><strong>Oct 2026</strong></div>
+              <div><span>Field</span><strong>Professional Skills</strong></div>
+            </div>
+            <a href="certificates/cert-13-professional-networking.pdf.pdf" target="_blank" rel="noreferrer"
+              class="cs-btn">View Certificate <i class="ph ph-arrow-up-right"></i></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ALL CERTIFICATES MARQUEE -->
+    <div class="container">
+      <div class="more-label gs-reveal"><i class="ph ph-ribbon"></i> Verified Course Certificates</div>
+    </div>
     <div class="marquee-wrapper awards-marquee gs-reveal">
       <div class="marquee-content">
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">01</div>
+          <img class="aw-logo" src="images/logos/johns-hopkins.svg" alt="Johns Hopkins University">
           <div class="aw-icon"><i class="ph ph-code"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -441,8 +603,9 @@
             Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">02</div>
+          <img class="aw-logo" src="images/logos/johns-hopkins.svg" alt="Johns Hopkins University">
           <div class="aw-icon"><i class="ph ph-palette"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -454,8 +617,9 @@
             Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">03</div>
+          <img class="aw-logo" src="images/logos/microsoft.svg" alt="Microsoft">
           <div class="aw-icon"><i class="ph ph-robot"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -466,8 +630,9 @@
             class="aw-btn">View Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">04</div>
+          <img class="aw-logo aw-logo-wide" src="images/logos/simplilearn.svg" alt="Simplilearn">
           <div class="aw-icon"><i class="ph ph-medal"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -478,8 +643,9 @@
             Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">05</div>
+          <img class="aw-logo" src="images/logos/microsoft.svg" alt="Microsoft">
           <div class="aw-icon"><i class="ph ph-chart-line-up"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -490,8 +656,9 @@
             Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">06</div>
+          <img class="aw-logo" src="images/logos/oracle.svg" alt="Oracle">
           <div class="aw-icon"><i class="ph ph-trophy"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -502,8 +669,9 @@
             class="aw-btn">View Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">07</div>
+          <img class="aw-logo" src="images/logos/microsoft.svg" alt="Microsoft">
           <div class="aw-icon"><i class="ph ph-cloud"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -515,8 +683,9 @@
             Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">08</div>
+          <img class="aw-logo" src="images/logos/google-cloud.svg" alt="Google Cloud">
           <div class="aw-icon"><i class="ph ph-users-three"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -527,8 +696,9 @@
             class="aw-btn">View Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">09</div>
+          <img class="aw-logo" src="images/logos/decodelabs.svg" alt="DecodeLabs">
           <div class="aw-icon"><i class="ph ph-briefcase"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -539,8 +709,9 @@
             Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">10</div>
+          <img class="aw-logo" src="images/logos/knowledgegate.svg" alt="KnowledgeGate">
           <div class="aw-icon"><i class="ph ph-badge-check"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -551,8 +722,9 @@
             Certificate <i class="ph ph-arrow-up-right"></i></a>
         </div>
 
-        <div class="award-card">
+        <div class="award-card"><div class="aw-accent"></div>
           <div class="aw-num">11</div>
+          <img class="aw-logo" src="images/logos/imac.svg" alt="IMAC">
           <div class="aw-icon"><i class="ph ph-rocket-launch"></i></div>
           <div class="aw-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
               class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
@@ -579,7 +751,14 @@
 
       <div class="services-grid gs-reveal gs-stagger-parent">
         <div class="service-card gs-stagger-child">
-          <div class="svc-icon"><i class="ph ph-code"></i></div>
+          <div class="svc-head">
+            <div class="svc-icon"><i class="ph ph-code"></i></div>
+            <div class="svc-logos">
+              <img src="images/logos/nextjs.svg" alt="Next.js" title="Next.js" />
+              <img src="images/logos/react.svg" alt="React" title="React" />
+              <img src="images/logos/typescript.svg" alt="TypeScript" title="TypeScript" />
+            </div>
+          </div>
           <h3>Full Stack Dev</h3>
           <p>End-to-end web applications from pixel-perfect frontends to scalable backends using Next.js, Node.js, and
             modern databases.</p>
@@ -587,7 +766,14 @@
             target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
         </div>
         <div class="service-card gs-stagger-child">
-          <div class="svc-icon dark"><i class="ph ph-cloud"></i></div>
+          <div class="svc-head">
+            <div class="svc-icon dark"><i class="ph ph-cloud"></i></div>
+            <div class="svc-logos">
+              <img src="images/logos/supabase.svg" alt="Supabase" title="Supabase" />
+              <img src="images/logos/postgresql.svg" alt="PostgreSQL" title="PostgreSQL" />
+              <img src="images/logos/docker.svg" alt="Docker" title="Docker" />
+            </div>
+          </div>
           <h3>SaaS Development</h3>
           <p>Build &amp; launch powerful SaaS platforms with subscription billing, user dashboards, and seamless API
             integrations.</p>
@@ -595,7 +781,14 @@
             target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
         </div>
         <div class="service-card gs-stagger-child">
-          <div class="svc-icon"><i class="ph ph-robot"></i></div>
+          <div class="svc-head">
+            <div class="svc-icon"><i class="ph ph-robot"></i></div>
+            <div class="svc-logos">
+              <img src="images/logos/openai.svg" alt="OpenAI" title="OpenAI" />
+              <img src="images/logos/claude.svg" alt="Claude" title="Claude" />
+              <img src="images/logos/python.svg" alt="Python" title="Python" />
+            </div>
+          </div>
           <h3>AI Agents &amp; Automation</h3>
           <p>Deploy smart AI agents, integrate LLMs, and automate repetitive business workflows to supercharge
             productivity.</p>
@@ -603,21 +796,38 @@
             target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
         </div>
         <div class="service-card gs-stagger-child">
-          <div class="svc-icon dark"><i class="ph ph-chart-line-up"></i></div>
+          <div class="svc-head">
+            <div class="svc-icon dark"><i class="ph ph-chart-line-up"></i></div>
+            <div class="svc-logos">
+              <img src="images/logos/google.svg" alt="Google" title="Google" />
+              <img src="images/logos/tailwindcss.svg" alt="Tailwind CSS" title="Tailwind CSS" />
+            </div>
+          </div>
           <h3>SEO &amp; Performance</h3>
           <p>Data-driven SEO strategies, technical audits, and Core Web Vitals optimization to drive organic growth.</p>
           <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22SEO%20%26%20Performance%22%20service.%20I%20need%20a%20technical%20SEO%20audit%20and%20Core%20Web%20Vitals%20optimization.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
             target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
         </div>
         <div class="service-card gs-stagger-child">
-          <div class="svc-icon"><i class="ph ph-palette"></i></div>
+          <div class="svc-head">
+            <div class="svc-icon"><i class="ph ph-palette"></i></div>
+            <div class="svc-logos">
+              <img src="images/logos/figma.svg" alt="Figma" title="Figma" />
+            </div>
+          </div>
           <h3>UI/UX Design</h3>
           <p>User-centered interfaces, wireframes, and design systems in Figma that balance beauty with conversion.</p>
           <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22UI%2FUX%20Design%22%20service.%20I%20need%20user-centered%20interfaces%2C%20wireframes%2C%20and%20a%20design%20system%20in%20Figma.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
             target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
         </div>
         <div class="service-card gs-stagger-child">
-          <div class="svc-icon dark"><i class="ph ph-plugs-connected"></i></div>
+          <div class="svc-head">
+            <div class="svc-icon dark"><i class="ph ph-plugs-connected"></i></div>
+            <div class="svc-logos">
+              <img src="images/logos/graphql.svg" alt="GraphQL" title="GraphQL" />
+              <img src="images/logos/nestjs.svg" alt="NestJS" title="NestJS" />
+            </div>
+          </div>
           <h3>API &amp; Integrations</h3>
           <p>RESTful &amp; GraphQL APIs, third-party integrations, and payment gateways wired securely into your
             product.</p>
@@ -625,14 +835,26 @@
             target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
         </div>
         <div class="service-card gs-stagger-child">
-          <div class="svc-icon"><i class="ph ph-mobile"></i></div>
+          <div class="svc-head">
+            <div class="svc-icon"><i class="ph ph-mobile"></i></div>
+            <div class="svc-logos">
+              <img src="images/logos/flutter.svg" alt="Flutter" title="Flutter" />
+              <img src="images/logos/ionic.svg" alt="Ionic" title="Ionic" />
+            </div>
+          </div>
           <h3>Mobile-First Builds</h3>
           <p>Responsive, app-like progressive web experiences that feel native on every screen size and device.</p>
           <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22Mobile-First%20Builds%22%20service.%20I%20need%20a%20responsive%2C%20app-like%20progressive%20web%20experience.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
             target="_blank" rel="noreferrer" class="svc-cta"><i class="ph ph-whatsapp-logo"></i> Chat on WhatsApp</a>
         </div>
         <div class="service-card gs-stagger-child">
-          <div class="svc-icon dark"><i class="ph ph-headset"></i></div>
+          <div class="svc-head">
+            <div class="svc-icon dark"><i class="ph ph-headset"></i></div>
+            <div class="svc-logos">
+              <img src="images/logos/docker.svg" alt="Docker" title="Docker" />
+              <img src="images/logos/github.svg" alt="GitHub" title="GitHub" />
+            </div>
+          </div>
           <h3>Support &amp; Maintenance</h3>
           <p>Ongoing updates, monitoring, and rapid bug fixes to keep your product fast, secure, and always online.</p>
           <a href="https://wa.me/923348910673?text=Hi%20Hamza!%20I%27m%20interested%20in%20your%20%22Support%20%26%20Maintenance%22%20service.%20I%20need%20ongoing%20updates%2C%20monitoring%2C%20and%20bug%20fixes%20for%20my%20product.%20Please%20share%20the%20requirements%2C%20timeline%2C%20and%20cost."
@@ -763,6 +985,8 @@
           <span class="eyebrow gs-reveal">My Portfolio</span>
           <h2 class="gs-reveal">Let's Have a Look at<br /><span class="accent-text">My Portfolio</span><span
               class="sparkle-accent">✤</span></h2>
+          <p class="portfolio-sub gs-reveal">14 production projects across SaaS, AI, CRM, automation &amp; digital
+            products — each shipped, deployed, and live.</p>
         </div>
         <a href="projects.html" class="cta-button gs-reveal">
           <span class="cta-label">View All Projects</span>
@@ -786,10 +1010,15 @@
         <button class="filter-btn" data-filter="digital-bundle">Digital Bundle</button>
       </div>
 
+      <!-- Live result count -->
+      <div class="filter-count" id="filter-count" aria-live="polite">Showing <strong id="pf-count">14</strong> of 14
+        projects</div>
+
       <!-- Project Grid -->
       <div class="project-grid gs-reveal gs-stagger-parent">
         <div class="project-card gs-stagger-child" data-category="automation management">
           <div class="pc-image">
+            <div class="pc-index">01</div>
             <img src="images/projects/01-hostelhub.jpg" alt="HostelHub — Hostel Management System" loading="lazy" />
             <div class="pc-overlay"><a href="https://hostel-hub-three-rho.vercel.app/" target="_blank" rel="noreferrer"
                 class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
@@ -811,6 +1040,7 @@
 
         <div class="project-card gs-stagger-child" data-category="ai crm saas">
           <div class="pc-image">
+            <div class="pc-index">02</div>
             <img src="images/projects/04-nexusai.jpg" alt="Nexus AI — Unified Notes & Corporate Workspace"
               loading="lazy" />
             <div class="pc-overlay"><a href="https://nexusai-theta-liard.vercel.app/" target="_blank" rel="noreferrer"
@@ -833,6 +1063,7 @@
 
         <div class="project-card gs-stagger-child" data-category="ai automation">
           <div class="pc-image">
+            <div class="pc-index">03</div>
             <img src="images/projects/06-kinetik.jpg" alt="Kinetik AI — Turn long videos into short clips"
               loading="lazy" />
             <div class="pc-overlay"><a href="https://film-slice-smart.lovable.app/" target="_blank" rel="noreferrer"
@@ -855,6 +1086,7 @@
 
         <div class="project-card gs-stagger-child" data-category="utilities">
           <div class="pc-image">
+            <div class="pc-index">04</div>
             <img src="images/projects/08-pdfpro.jpg" alt="PDFPro Tools — 30 Free Online PDF Tools" loading="lazy" />
             <div class="pc-overlay"><a href="https://pdfpro-gules.vercel.app/" target="_blank" rel="noreferrer"
                 class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
@@ -876,6 +1108,7 @@
 
         <div class="project-card gs-stagger-child" data-category="ai crm saas">
           <div class="pc-image">
+            <div class="pc-index">05</div>
             <img src="images/projects/11-aegiscrm.jpg" alt="Aegis CRM — Sales that scale with intent" loading="lazy" />
             <div class="pc-overlay"><a href="https://intent-flow-67.lovable.app/" target="_blank" rel="noreferrer"
                 class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
@@ -897,6 +1130,7 @@
 
         <div class="project-card gs-stagger-child" data-category="automation crm ai">
           <div class="pc-image">
+            <div class="pc-index">06</div>
             <img src="images/projects/13-hamatech.jpg" alt="HamzaTech Business — AI-native ERP" loading="lazy" />
             <div class="pc-overlay"><a href="https://bizflow-aura.lovable.app/" target="_blank" rel="noreferrer"
                 class="overlay-btn">Visit Live <i class="ph ph-arrow-up-right"></i></a></div>
@@ -919,6 +1153,7 @@
         <!-- Google Script Projects (Premium) -->
         <div class="project-card gs-stagger-child locked-project" data-category="google-apps automation locked">
           <div class="pc-image">
+            <div class="pc-index">07</div>
             <img src="images/projects/24-gscript1.svg" alt="Google Script Project 1" loading="lazy" />
             <div class="pc-overlay">
               <span class="lock-badge">🔒</span>
@@ -940,6 +1175,7 @@
 
         <div class="project-card gs-stagger-child locked-project" data-category="google-apps automation locked">
           <div class="pc-image">
+            <div class="pc-index">08</div>
             <img src="images/projects/25-gscript2.svg" alt="Google Script Project 2" loading="lazy" />
             <div class="pc-overlay">
               <span class="lock-badge">🔒</span>
@@ -961,6 +1197,7 @@
 
         <div class="project-card gs-stagger-child locked-project" data-category="google-apps data locked">
           <div class="pc-image">
+            <div class="pc-index">09</div>
             <img src="images/projects/26-gscript3.svg" alt="Google Script Project 3" loading="lazy" />
             <div class="pc-overlay">
               <span class="lock-badge">🔒</span>
@@ -982,6 +1219,7 @@
 
         <div class="project-card gs-stagger-child locked-project" data-category="google-apps productivity locked">
           <div class="pc-image">
+            <div class="pc-index">10</div>
             <img src="images/projects/27-gscript4.svg" alt="Google Script Project 4" loading="lazy" />
             <div class="pc-overlay">
               <span class="lock-badge">🔒</span>
@@ -1003,6 +1241,7 @@
 
         <div class="project-card gs-stagger-child locked-project" data-category="google-apps backend locked">
           <div class="pc-image">
+            <div class="pc-index">11</div>
             <img src="images/projects/29-gscript6.svg" alt="Google Script Project 6" loading="lazy" />
             <div class="pc-overlay">
               <span class="lock-badge">🔒</span>
@@ -1024,6 +1263,7 @@
 
         <div class="project-card gs-stagger-child locked-project" data-category="google-apps notification locked">
           <div class="pc-image">
+            <div class="pc-index">12</div>
             <img src="images/projects/30-gscript7.svg" alt="Google Script Project 7" loading="lazy" />
             <div class="pc-overlay">
               <span class="lock-badge">🔒</span>
@@ -1045,6 +1285,7 @@
 
         <div class="project-card gs-stagger-child locked-project" data-category="google-apps integration locked">
           <div class="pc-image">
+            <div class="pc-index">13</div>
             <img src="images/projects/31-gscript8.svg" alt="Google Script Project 8" loading="lazy" />
             <div class="pc-overlay">
               <span class="lock-badge">🔒</span>
@@ -1067,6 +1308,7 @@
         <!-- Course Bundle -->
         <div class="project-card gs-stagger-child locked-project" data-category="digital-bundle locked">
           <div class="pc-image">
+            <div class="pc-index">14</div>
             <img src="images/projects/32-coursebundle.svg" alt="10,000+ WordPress & Shopify Bundle" loading="lazy" />
             <div class="pc-overlay">
               <span class="lock-badge">🔒</span>
@@ -1085,6 +1327,13 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Empty state (shown when a filter matches nothing) -->
+      <div class="filter-empty" id="filter-empty" hidden>
+        <div class="fe-icon"><i class="ph ph-magnifying-glass"></i></div>
+        <p>No projects in this category yet.</p>
+        <button class="fe-reset" id="fe-reset">Show all projects</button>
       </div>
     </div>
   </section>
@@ -1432,7 +1681,21 @@
                 <option>Frontend Architecture &amp; Design Systems</option>
                 <option>Performance &amp; SEO Audit</option>
                 <option>Other Collaboration / Full-time Opportunity</option>
+                <option value="other">Something else — describe it below</option>
               </select>
+            </div>
+
+            <!-- Hidden "Other" field with live suggestions -->
+            <div class="form-group other-group" id="cf-other-wrap" hidden>
+              <label for="cf-other">Describe your project type</label>
+              <div class="other-autocomplete">
+                <input id="cf-other" name="project_type_other" type="text" autocomplete="off"
+                  placeholder="Start typing — e.g. mobile app, e-commerce, chatbot..." aria-autocomplete="list"
+                  aria-controls="cf-other-list" />
+                <ul class="ac-list" id="cf-other-list" role="listbox"></ul>
+              </div>
+              <div class="ac-hint"><i class="ph ph-magnifying-glass"></i> Live suggestions fetched from Google — or
+                type your own.</div>
             </div>
             <div class="form-group">
               <label for="cf-message">Message</label>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" width="340" height="80">
+  <text x="8" y="55" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="bold" letter-spacing="-1">
+    <tspan fill="#F96316">simpli</tspan><tspan fill="#0F73B7">learn</tspan>
+  </text>
+  <!-- orange dot over the second i (the one before learn) -->
+  <circle cx="150" cy="22" r="5.5" fill="#F96316"/>
+</svg>

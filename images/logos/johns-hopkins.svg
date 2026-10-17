@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140">
+  <defs>
+    <clipPath id="shield">
+      <path d="M6 6 H114 V86 Q114 118 60 134 Q6 118 6 86 Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#shield)">
+    <!-- background -->
+    <rect x="0" y="0" width="120" height="140" fill="#002D72"/>
+    <!-- open book at top -->
+    <path d="M18 14 Q40 8 58 16 Q76 8 98 14 L98 34 Q76 28 58 36 Q40 28 18 34 Z" fill="#FFFFFF" stroke="#002D72" stroke-width="1.2"/>
+    <path d="M58 16 L58 36" stroke="#002D72" stroke-width="1.2"/>
+    <g stroke="#9BB4DE" stroke-width="0.8">
+      <path d="M26 20 L50 20"/><path d="M26 26 L50 26"/>
+      <path d="M66 20 L90 20"/><path d="M66 26 L90 26"/>
+    </g>
+    <!-- left: globe -->
+    <rect x="0" y="40" width="60" height="100" fill="#002D72"/>
+    <circle cx="30" cy="82" r="22" fill="#FFFFFF" stroke="#002D72" stroke-width="1.5"/>
+    <g fill="none" stroke="#002D72" stroke-width="1">
+      <ellipse cx="30" cy="82" rx="22" ry="22"/>
+      <ellipse cx="30" cy="82" rx="9" ry="22"/>
+      <path d="M8 82 L52 82"/>
+      <path d="M12 70 L48 70"/>
+      <path d="M12 94 L48 94"/>
+    </g>
+    <!-- right: Maryland checkers -->
+    <rect x="60" y="40" width="60" height="100" fill="#FFFFFF"/>
+    <g fill="#002D72">
+      <rect x="60" y="40" width="15" height="17.5"/>
+      <rect x="90" y="40" width="15" height="17.5"/>
+      <rect x="75" y="57.5" width="15" height="17.5"/>
+      <rect x="105" y="57.5" width="15" height="17.5"/>
+      <rect x="60" y="75" width="15" height="17.5"/>
+      <rect x="90" y="75" width="15" height="17.5"/>
+      <rect x="75" y="92.5" width="15" height="17.5"/>
+      <rect x="105" y="92.5" width="15" height="17.5"/>
+      <rect x="60" y="110" width="15" height="17.5"/>
+      <rect x="90" y="110" width="15" height="17.5"/>
+    </g>
+  </g>
+  <path d="M6 6 H114 V86 Q114 118 60 134 Q6 118 6 86 Z" fill="none" stroke="#002D72" stroke-width="4"/>
+</svg>

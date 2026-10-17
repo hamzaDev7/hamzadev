@@ -309,9 +309,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
+                const fd = new FormData(contactForm);
+                // If "Other" is selected, send the user's own description as the project type
+                const typeSel = document.getElementById('cf-type');
+                const otherInput = document.getElementById('cf-other');
+                if (typeSel && typeSel.value === 'other') {
+                    const custom = otherInput ? otherInput.value.trim() : '';
+                    fd.set('project_type', custom ? 'Other: ' + custom : 'Other (not specified)');
+                }
+
                 const res = await fetch(contactForm.action, {
                     method: 'POST',
-                    body: new FormData(contactForm),
+                    body: fd,
                     headers: { 'Accept': 'application/json' }
                 });
                 const data = await res.json().catch(() => null);
@@ -338,6 +347,152 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ------------------------------------------------------------------
+    // 11b. Contact form "Other" project type → live suggestions (Google)
+    // ------------------------------------------------------------------
+    (function () {
+        const typeSel = document.getElementById('cf-type');
+        const otherWrap = document.getElementById('cf-other-wrap');
+        const otherInput = document.getElementById('cf-other');
+        const list = document.getElementById('cf-other-list');
+        if (!typeSel || !otherWrap || !otherInput || !list) return;
+
+        // Curated, always-available fallback suggestions (relevant to dev work)
+        const curated = [
+            'E-commerce store', 'Mobile app (iOS / Android)', 'WordPress / Shopify build',
+            'Chrome extension', 'Browser automation / bot', 'Data dashboard / analytics',
+            'Chatbot / AI assistant', 'REST / GraphQL API', 'Landing page',
+            'Portfolio website', 'School / college management system', 'CRM / ERP',
+            'Food delivery app', 'Real estate platform', 'Fintech app', 'Blockchain / Web3'
+        ];
+
+        let debounce = null;
+        let items = [];
+        let active = -1;
+        let seq = 0;
+
+        const esc = (s) => s.replace(/[&<>"']/g, (c) =>
+            ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+        function render(listArr) {
+            items = listArr.slice(0, 8);
+            if (!items.length) { hide(); return; }
+            list.innerHTML = items.map((s, i) =>
+                `<li class="ac-item" role="option" data-i="${i}"><i class="ph ph-magnifying-glass"></i><span>${esc(s)}</span></li>`
+            ).join('');
+            list.classList.add('show');
+            active = -1;
+        }
+
+        function hide() {
+            list.classList.remove('show');
+            list.innerHTML = '';
+            active = -1;
+        }
+
+        // JSONP call to Google's query-suggestion endpoint (CORS-free)
+        function googleSuggest(q, cb) {
+            const name = '__ggs' + (seq++);
+            const script = document.createElement('script');
+            let settled = false;
+            const done = () => {
+                if (settled) return;
+                settled = true;
+                try { delete window[name]; } catch (e) { window[name] = undefined; }
+                script.remove();
+            };
+            window[name] = (data) => {
+                done();
+                cb(Array.isArray(data) && Array.isArray(data[1]) ? data[1] : []);
+            };
+            script.onerror = () => { done(); cb([]); };
+            script.src = 'https://suggestqueries.google.com/complete/search?client=firefox&q=' +
+                encodeURIComponent(q) + '&callback=' + name;
+            document.head.appendChild(script);
+            setTimeout(() => { done(); cb([]); }, 3000);
+        }
+
+        function merge(primary, secondary) {
+            const seen = new Set();
+            const out = [];
+            for (const s of primary.concat(secondary)) {
+                if (!s) continue;
+                const k = s.toLowerCase();
+                if (!seen.has(k)) { seen.add(k); out.push(s); }
+            }
+            return out;
+        }
+
+        function filterCurated(q) {
+            return curated.filter((c) => c.toLowerCase().includes(q.toLowerCase()));
+        }
+
+        // Show curated immediately, then blend in live Google suggestions
+        function update(q) {
+            if (!q) { render(curated); return; }
+            googleSuggest(q, (g) => {
+                if (otherInput.value.trim().toLowerCase() !== q.toLowerCase()) return; // input changed
+                render(merge(g, filterCurated(q)));
+            });
+            render(merge([], filterCurated(q)));
+        }
+
+        typeSel.addEventListener('change', () => {
+            const on = typeSel.value === 'other';
+            otherWrap.hidden = !on;
+            if (on) {
+                otherInput.focus();
+                update('');
+            } else {
+                otherInput.value = '';
+                hide();
+            }
+        });
+
+        otherInput.addEventListener('focus', () => {
+            if (!otherInput.value.trim()) render(curated);
+        });
+
+        otherInput.addEventListener('input', () => {
+            const q = otherInput.value.trim();
+            clearTimeout(debounce);
+            render(q ? filterCurated(q) : curated);
+            if (q.length >= 2) debounce = setTimeout(() => update(q), 350);
+        });
+
+        // mousedown (not click) so it fires before input blur
+        list.addEventListener('mousedown', (e) => {
+            const li = e.target.closest('.ac-item');
+            if (!li) return;
+            e.preventDefault();
+            otherInput.value = items[+li.dataset.i] || li.textContent.trim();
+            hide();
+        });
+
+        otherInput.addEventListener('keydown', (e) => {
+            const nodeItems = list.querySelectorAll('.ac-item');
+            if (!nodeItems.length) return;
+            if (e.key === 'ArrowDown') {
+                e.preventDefault(); active = (active + 1) % nodeItems.length; paint(nodeItems);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault(); active = (active - 1 + nodeItems.length) % nodeItems.length; paint(nodeItems);
+            } else if (e.key === 'Enter') {
+                if (active > -1) { e.preventDefault(); otherInput.value = items[active]; hide(); }
+            } else if (e.key === 'Escape') {
+                hide();
+            }
+        });
+
+        function paint(nodeItems) {
+            nodeItems.forEach((n, i) => n.classList.toggle('hover', i === active));
+            if (nodeItems[active]) nodeItems[active].scrollIntoView({ block: 'nearest' });
+        }
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.other-autocomplete')) hide();
+        });
+    })();
+
+    // ------------------------------------------------------------------
     // 12. Newsletter button
     // ------------------------------------------------------------------
     const newsletterBtn = document.getElementById('newsletter-btn');
@@ -355,33 +510,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ------------------------------------------------------------------
-    // 13. Project filtering
+    // 13. Project filtering (with live count + empty state)
     // ------------------------------------------------------------------
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const pfCount = document.getElementById('pf-count');
+    const filterCount = document.getElementById('filter-count');
+    const filterEmpty = document.getElementById('filter-empty');
+    const feReset = document.getElementById('fe-reset');
+    const totalProjects = projectCards.length;
+
+    function applyFilter(filter) {
+        let visible = 0;
+
+        projectCards.forEach((card) => {
+            const categories = card.getAttribute('data-category') || '';
+            const match = filter === 'all' || categories.includes(filter);
+            card.style.display = match ? '' : 'none';
+            if (match) {
+                visible++;
+                if (hasGSAP) {
+                    gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+                }
+            }
+        });
+
+        // Update live count
+        if (pfCount) pfCount.textContent = visible;
+        if (filterCount) {
+            filterCount.innerHTML = filter === 'all'
+                ? `Showing <strong id="pf-count">${visible}</strong> of ${totalProjects} projects`
+                : `Showing <strong id="pf-count">${visible}</strong> of ${totalProjects} projects`;
+        }
+
+        // Toggle empty state
+        if (filterEmpty) filterEmpty.hidden = visible !== 0;
+    }
 
     filterBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
             const filter = btn.getAttribute('data-filter');
-
-            // Update active button
             filterBtns.forEach((b) => b.classList.remove('active'));
             btn.classList.add('active');
-
-            // Filter cards
-            projectCards.forEach((card) => {
-                const categories = card.getAttribute('data-category') || '';
-                if (filter === 'all' || categories.includes(filter)) {
-                    card.style.display = '';
-                    if (hasGSAP) {
-                        gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
-                    }
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            applyFilter(filter);
         });
     });
+
+    // Empty-state "Show all" reset
+    if (feReset) {
+        feReset.addEventListener('click', () => {
+            const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+            if (allBtn) allBtn.click();
+        });
+    }
 
     // ------------------------------------------------------------------
     // 14. Locked project unlock modal + WhatsApp payment
@@ -492,3 +673,113 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// ------------------------------------------------------------------
+// 15. Custom cursor + click ripple (fine-pointer devices only)
+// ------------------------------------------------------------------
+(function customCursor() {
+    // Only enable on devices with a real (fine) pointer — never on touch
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)');
+    if (!fine.matches) return;
+
+    const dot = document.createElement('div');
+    dot.className = 'cursor-dot';
+    const ring = document.createElement('div');
+    ring.className = 'cursor-ring';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+    document.body.classList.add('cursor-on');
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+    let raf = null;
+
+    const lerp = (a, b, n) => a + (b - a) * n;
+
+    function render() {
+        ringX = lerp(ringX, mouseX, 0.18);
+        ringY = lerp(ringY, mouseY, 0.18);
+        ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
+        raf = requestAnimationFrame(render);
+    }
+    raf = requestAnimationFrame(render);
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        // dot snaps instantly
+        dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    }, { passive: true });
+
+    // Enlarge the ring over interactive elements
+    const interactiveSelector = 'a, button, [role="button"], input, select, textarea, .filter-btn, .project-card';
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(interactiveSelector)) ring.classList.add('hovering');
+    });
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(interactiveSelector)) ring.classList.remove('hovering');
+    });
+
+    // Press feedback + ripple burst on click/tap
+    window.addEventListener('mousedown', (e) => {
+        dot.classList.add('pressing');
+        spawnRipple(e.clientX, e.clientY);
+    });
+    window.addEventListener('mouseup', () => dot.classList.remove('pressing'));
+
+    // Ripple on touch too (so mobile users still get the "tap runs" feedback)
+    window.addEventListener('touchstart', (e) => {
+        const t = e.touches[0];
+        if (t) spawnRipple(t.clientX, t.clientY);
+    }, { passive: true });
+
+    function spawnRipple(x, y) {
+        const r = document.createElement('div');
+        r.className = 'cursor-ripple';
+        r.style.transform = `translate(${x}px, ${y}px)`;
+        document.body.appendChild(r);
+        r.addEventListener('animationend', () => r.remove());
+        // safety cleanup
+        setTimeout(() => r.remove(), 700);
+    }
+
+    // Pause RAF when the tab is hidden (saves battery)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            cancelAnimationFrame(raf);
+            raf = null;
+        } else if (!raf) {
+            raf = requestAnimationFrame(render);
+        }
+    });
+})();
+
+// ------------------------------------------------------------------
+// 16. Hero background video — hide cleanly if no source can play
+// ------------------------------------------------------------------
+(function heroVideoGuard() {
+    const video = document.querySelector('.hero-video');
+    if (!video) return;
+
+    // Try to autoplay (some browsers need an explicit play() after muted set)
+    const tryPlay = () => {
+        const p = video.play();
+        if (p && typeof p.catch === 'function') p.catch(() => { /* autoplay blocked — gradient shows */ });
+    };
+    if (video.readyState >= 2) tryPlay();
+    video.addEventListener('loadeddata', tryPlay, { once: true });
+
+    // If nothing has buffered after a few seconds, assume all sources failed
+    let settled = false;
+    const hide = () => {
+        if (settled) return;
+        settled = true;
+        video.style.display = 'none';
+    };
+    video.addEventListener('error', hide, true);
+    setTimeout(() => {
+        if (!video.videoWidth && video.readyState < 2) hide();
+    }, 5000);
+})();
